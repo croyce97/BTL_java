@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.paint.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="562.5" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Translator">
+   <children>
+      <TextField fx:id="needTrans" alignment="TOP_LEFT" layoutX="14.0" layoutY="73.0" prefHeight="389.0" prefWidth="291.0" />
+      <TextField fx:id="Transed" alignment="TOP_LEFT" layoutX="480.0" layoutY="73.0" prefHeight="389.0" prefWidth="291.0" />
+      <ChoiceBox fx:id="langFrom" layoutX="14.0" layoutY="14.0" prefWidth="150.0" />
+      <ChoiceBox fx:id="langTo" layoutX="480.0" layoutY="14.0" prefWidth="150.0" />
+      <ImageView fitHeight="150.0" fitWidth="144.0" layoutX="319.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@/icons/icons8_arrow_64px.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="342.0" layoutY="259.0" mnemonicParsing="false" onAction="#Trans" text="TRANSLATOR" />
+      <ImageView fitHeight="27.0" fitWidth="52.0" layoutX="118.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@/icons/icons8_search_64px.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="27.0" fitWidth="52.0" layoutX="583.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@/icons/icons8_search_64px.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="106.0" fitWidth="71.0" layoutX="245.0" layoutY="350.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@/image/person2.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="106.0" fitWidth="71.0" layoutX="693.0" layoutY="350.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@/image/person1.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="62.0" fitWidth="113.0" layoutX="928.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@/icons/icons8_google_translate_48px.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
