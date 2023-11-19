@@ -105,6 +105,9 @@ public class MainController implements Initializable {
             a.printStackTrace();
         }
     }
+    public void Speak(ActionEvent actionEvent) {
+
+    }
     public void setMainPane(AnchorPane pane) {
         searchAnchorPane.getChildren().clear();
         searchAnchorPane.getChildren().addAll(pane);

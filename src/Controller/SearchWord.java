@@ -2,6 +2,7 @@ package Controller;
 
 import Data.Data;
 import Data.Word;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
@@ -10,6 +11,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
+import javax.swing.*;
 import java.awt.*;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -27,6 +29,9 @@ public class SearchWord implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         wordList.getItems().clear();
         wordList.getItems().addAll(Data.prefixSearch("a"));
+    }
+    public void Speak(ActionEvent actionEvent) {
+
     }
 
 }

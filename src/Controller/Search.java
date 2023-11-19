@@ -2,6 +2,7 @@ package Controller;
 
 import Data.Data;
 import Data.Word;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
@@ -32,5 +33,8 @@ public class Search implements Initializable {
     public void inputWordEventHandle(KeyEvent e) {
         wordList.getItems().clear();
         wordList.getItems().addAll(Data.prefixSearch(textField.getText()));
+    }
+    public void Speak(ActionEvent actionEvent) {
+
     }
 }

@@ -22,5 +22,6 @@
             <Image url="@/image/img1.jpg" />
          </image>
       </ImageView>
+      <Button layoutX="721.0" layoutY="32.0" mnemonicParsing="false" onAction="#Speak" text="Speak" />
    </children>
 </AnchorPane>

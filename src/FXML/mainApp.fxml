@@ -45,6 +45,7 @@
                   <Image url="@/icons/icons8_search_64px.png" />
                </image>
             </ImageView>
+            <Button layoutX="722.0" layoutY="23.0" mnemonicParsing="false" onAction="#Speak" text="Speak" />
          </children>
       </AnchorPane>
       <ImageView fitHeight="62.0" fitWidth="113.0" layoutX="928.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
