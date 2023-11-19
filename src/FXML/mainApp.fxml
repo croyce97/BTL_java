@@ -17,19 +17,9 @@
             <Image url="@/image/galaxy.jpeg" />
          </image>
       </ImageView>
-      <Button layoutX="25.0" layoutY="310.0" mnemonicParsing="false" onAction="#Delete" prefHeight="35.0" prefWidth="100.0" text="Delete" textFill="#9e2424">
-         <effect>
-            <SepiaTone />
-         </effect>
-      </Button>
-      <Button layoutX="25.0" layoutY="255.0" mnemonicParsing="false" onAction="#Update" prefHeight="35.0" prefWidth="100.0" text="Update" textFill="#9e2424">
-         <effect>
-            <SepiaTone />
-         </effect>
-      </Button>
-      <Text layoutX="425.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dictionary">
+      <Text layoutX="399.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dictionary" wrappingWidth="241.89453125">
          <font>
-            <Font size="36.0" />
+            <Font name="Times New Roman" size="48.0" />
          </font>
          <fill>
             <LinearGradient endX="1.0" endY="1.0">
@@ -40,26 +30,6 @@
             </LinearGradient>
          </fill>
       </Text>
-      <Button layoutX="25.0" layoutY="365.0" mnemonicParsing="false" onAction="#Add" prefHeight="35.0" prefWidth="100.0" text="Add">
-         <effect>
-            <SepiaTone />
-         </effect>
-      </Button>
-      <Button layoutX="25.0" layoutY="145.0" mnemonicParsing="false" onAction="#Translation" prefHeight="35.0" prefWidth="100.0" text="Translator">
-         <effect>
-            <SepiaTone />
-         </effect>
-      </Button>
-      <Button layoutX="25.0" layoutY="200.0" mnemonicParsing="false" onAction="#Game" prefHeight="35.0" prefWidth="100.0" text="Game">
-         <effect>
-            <SepiaTone />
-         </effect>
-      </Button>
-      <Button layoutX="25.0" layoutY="90.0" mnemonicParsing="false" onAction="#search" prefHeight="35.0" prefWidth="100.0" text="Search">
-         <effect>
-            <SepiaTone />
-         </effect>
-      </Button>
       <AnchorPane fx:id="searchAnchorPane" layoutX="188.0" layoutY="72.0" prefHeight="471.0" prefWidth="817.0">
          <children>
             <TextField fx:id="textField" layoutX="14.0" layoutY="14.0" onKeyReleased="#inputWordEventHandle" prefHeight="33.0" prefWidth="287.0" />
@@ -82,10 +52,96 @@
             <Image url="@/icons/icons8_google_translate_48px.png" />
          </image>
       </ImageView>
-      <Button layoutX="25.0" layoutY="420.0" mnemonicParsing="false" onAction="#Out" prefHeight="35.0" prefWidth="100.0" text="Out">
+      <ImageView fitHeight="48.0" fitWidth="111.0" layoutX="20.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/start.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="17.0" layoutY="85.0" mnemonicParsing="false" onAction="#search" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: 513113;" stylesheets="@../style.css" text="Search" textFill="#ff7e7e">
          <effect>
             <SepiaTone />
          </effect>
+         <font>
+            <Font name="Times New Roman" size="18.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="48.0" fitWidth="111.0" layoutX="20.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/start.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="15.0" layoutY="145.0" mnemonicParsing="false" onAction="#Translation" prefHeight="35.0" prefWidth="112.0" style="-fx-background-color: 513113;" stylesheets="@../style.css" text="Translator" textFill="#ff7e7e">
+         <effect>
+            <SepiaTone />
+         </effect>
+         <font>
+            <Font name="Times New Roman" size="18.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="48.0" fitWidth="111.0" layoutX="20.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/start.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="17.0" layoutY="205.0" mnemonicParsing="false" onAction="#Game" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: 513113;" stylesheets="@../style.css" text="Game" textFill="#ff7e7e">
+         <effect>
+            <SepiaTone />
+         </effect>
+         <font>
+            <Font name="Times New Roman" size="18.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="48.0" fitWidth="111.0" layoutX="20.0" layoutY="260.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/start.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="17.0" layoutY="265.0" mnemonicParsing="false" onAction="#Update" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: 513113;" stylesheets="@../style.css" text="Update" textFill="#ff7e7e">
+         <effect>
+            <SepiaTone />
+         </effect>
+         <font>
+            <Font name="Times New Roman" size="18.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="48.0" fitWidth="111.0" layoutX="20.0" layoutY="320.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/start.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="17.0" layoutY="325.0" mnemonicParsing="false" onAction="#Delete" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: 513113;" stylesheets="@../style.css" text="Delete" textFill="#ff7e7e">
+         <effect>
+            <SepiaTone />
+         </effect>
+         <font>
+            <Font name="Times New Roman" size="18.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="48.0" fitWidth="111.0" layoutX="20.0" layoutY="380.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/start.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="17.0" layoutY="385.0" mnemonicParsing="false" onAction="#Add" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: 513113;" stylesheets="@../style.css" text="Add" textFill="#ff7e7e">
+         <effect>
+            <SepiaTone />
+         </effect>
+         <font>
+            <Font name="Times New Roman" size="18.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="48.0" fitWidth="111.0" layoutX="20.0" layoutY="440.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/start.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="17.0" layoutY="445.0" mnemonicParsing="false" onAction="#Out" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: 513113;" stylesheets="@../style.css" text="Out" textFill="#ff7e7e">
+         <effect>
+            <SepiaTone />
+         </effect>
+         <font>
+            <Font name="Times New Roman" size="18.0" />
+         </font>
       </Button>
    </children>
 </AnchorPane>

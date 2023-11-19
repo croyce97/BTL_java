@@ -16,10 +16,9 @@
       <ChoiceBox fx:id="langTo" layoutX="480.0" layoutY="14.0" prefWidth="150.0" />
       <ImageView fitHeight="150.0" fitWidth="144.0" layoutX="319.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@/icons/icons8_arrow_64px.png" />
+            <Image url="@/image/start.png" />
          </image>
       </ImageView>
-      <Button layoutX="342.0" layoutY="259.0" mnemonicParsing="false" onAction="#Trans" text="TRANSLATOR" />
       <ImageView fitHeight="27.0" fitWidth="52.0" layoutX="118.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@/icons/icons8_search_64px.png" />
@@ -30,14 +29,14 @@
             <Image url="@/icons/icons8_search_64px.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="106.0" fitWidth="71.0" layoutX="245.0" layoutY="350.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@/image/person2.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="106.0" fitWidth="71.0" layoutX="693.0" layoutY="350.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="106.0" fitWidth="71.0" layoutX="224.0" layoutY="350.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@/image/person1.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="106.0" fitWidth="71.0" layoutX="702.0" layoutY="349.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@/image/person2.jpg" />
          </image>
       </ImageView>
       <ImageView fitHeight="62.0" fitWidth="113.0" layoutX="928.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
@@ -45,5 +44,26 @@
             <Image url="@/icons/icons8_google_translate_48px.png" />
          </image>
       </ImageView>
+      <ImageView fitHeight="106.0" fitWidth="136.0" layoutX="338.0" layoutY="183.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@/icons/icons8_arrow_64px.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="319.0" layoutY="214.0" mnemonicParsing="false" onAction="#Trans" prefHeight="44.0" prefWidth="144.0" style="-fx-background-color: 513113;" stylesheets="@../style.css">
+         <effect>
+            <SepiaTone />
+         </effect>
+         <font>
+            <Font name="Times New Roman" size="24.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#e8e8e8" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Button>
    </children>
 </AnchorPane>

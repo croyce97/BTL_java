@@ -1,0 +1,10 @@
+#StartBtn{
+    -fx-background-color: #4CAF50; /* Màu xanh lá cây */
+        -fx-text-fill: white;
+        -fx-min-width: 60px; /* Đặt chiều rộng tối thiểu */
+        -fx-min-height: 60px; /* Đặt chiều cao tối thiểu */
+        -fx-max-width: 60px; /* Đặt chiều rộng tối đa */
+        -fx-max-height: 60px; /* Đặt chiều cao tối đa */
+        -fx-border-radius: 30;
+    -fx-cursor: hand;
+}
