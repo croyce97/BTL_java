@@ -31,4 +31,8 @@ public class Word {
     public void setMean(String mean) {
         this.mean = mean;
     }
+    @Override
+    public String toString() {
+        return word;
+    }
 }

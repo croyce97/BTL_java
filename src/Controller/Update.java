@@ -20,13 +20,14 @@ public class Update implements Initializable {
     TextArea t;
     @FXML
     TextField UpdateMean;
+    Word word;
     public void initialize(URL location, ResourceBundle resources) {
         wordList.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
         wordList.getItems().clear();
         wordList.getItems().addAll(Data.prefixSearch(""));
     }
     public void wordListClicked(){
-        Word word = wordList.getSelectionModel().getSelectedItem();
+        word = wordList.getSelectionModel().getSelectedItem();
         t.setText(word.getMean());
     }
     public void inputWordEventHandle(KeyEvent e) {
@@ -34,7 +35,8 @@ public class Update implements Initializable {
         wordList.getItems().addAll(Data.prefixSearch(textField.getText()));
     }
     public void update(ActionEvent actionEvent) {
-
+        Word newWord = new Word(word.getIdx(), word.getWord(), UpdateMean.getText());
+        Data.Update(newWord);
     }
 
 }

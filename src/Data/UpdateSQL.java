@@ -39,6 +39,35 @@ public class UpdateSQL {
         ConnectionToSQL newConnection = new ConnectionToSQL();
 
         Connection connectionDB = newConnection.DataBaseConnection();
+        String sql = " UPDATE main SET meaning = ? WHERE id = ?;";
+        try {
+            if (connectionDB != null) {
+                System.out.println("oke co the sua tu");
+            }
+            assert connectionDB != null;
+
+            PreparedStatement preparedStmt = connectionDB.prepareStatement(sql);
+            preparedStmt.setString(1, word.getMean());
+            preparedStmt.setInt(2, word.getIdx());
+
+
+            boolean a = preparedStmt.execute();
+            if (!a) {
+                System.out.println("tu da duoc xoa");
+
+            }
+            else System.out.println("khogn xoa dc tu");
+            connectionDB.close();
+        } catch (Exception b) {
+            System.err.println("Got an exception!");
+            b.printStackTrace();
+        }
+
+    }
+    public static void DeleteWord(Word word) {
+        ConnectionToSQL newConnection = new ConnectionToSQL();
+
+        Connection connectionDB = newConnection.DataBaseConnection();
         String sql = " DELETE FROM main WHERE id = ?;";
         try {
             if (connectionDB != null) {
@@ -60,9 +89,6 @@ public class UpdateSQL {
             System.err.println("Got an exception!");
             b.printStackTrace();
         }
-    }
-    public static void DeleteWord(Word word) {
-
     }
 
 }

@@ -27,10 +27,6 @@ public class RadixTree<V> {
             next = new HashMap<>();
         }
 
-        public HashMap<Character, Node> getNext() {
-            return next;
-        }
-
         public Node getParent() {
             return parent;
         }
@@ -55,10 +51,6 @@ public class RadixTree<V> {
 
         public String getLabel() {
             return label;
-        }
-
-        public void setLabel(String label) {
-            this.label = label;
         }
 
         public Node getNextNode(Character transitionChar) {
@@ -89,8 +81,6 @@ public class RadixTree<V> {
 
             return newNode;
         }
-
-        // Hợp con với cha lại
         public Node mergeParentNode() {
             Node currPar = this.getParent();
 
@@ -106,7 +96,7 @@ public class RadixTree<V> {
             return next.values();
         }
 
-        // Hàm compareTo cho comparable
+
         public int compareTo(Node o) {
             return o.label.charAt(0) - this.label.charAt(0);
         }

@@ -21,6 +21,7 @@ public class Search implements Initializable {
     TextField textField;
     @FXML
     TextArea t;
+    @Override
     public void initialize(URL location, ResourceBundle resources) {
         wordList.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
         wordList.getItems().clear();

@@ -16,7 +16,7 @@ public class LoadWordFromDataBase {
             Connection connectionDB = newConnection.DataBaseConnection();
             String Query = "select * from main";
             if (connectionDB != null) {
-                System.out.println("oke");
+                System.out.println("oke \nDang load du lieu tu Database");
             }
             assert connectionDB != null;
             Statement statement = connectionDB.createStatement();

@@ -27,7 +27,11 @@ public class Data {
         UpdateSQL.Add(w);
     }
     public static void Delete(Word w) {
-
+        radixtree.delete((w.getWord() + String.valueOf(w.getIdx())).toLowerCase());
+        UpdateSQL.DeleteWord(w);
+    }
+    public static void Update(Word w) {
+        UpdateSQL.UpdateWord(w);
     }
 
 }
