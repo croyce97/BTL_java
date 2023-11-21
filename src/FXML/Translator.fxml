@@ -10,10 +10,16 @@
 
 <AnchorPane prefHeight="562.5" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Translator">
    <children>
-      <TextField fx:id="needTrans" alignment="TOP_LEFT" layoutX="14.0" layoutY="73.0" prefHeight="389.0" prefWidth="291.0" />
-      <TextField fx:id="Transed" alignment="TOP_LEFT" layoutX="480.0" layoutY="73.0" prefHeight="389.0" prefWidth="291.0" />
-      <ChoiceBox fx:id="langFrom" layoutX="14.0" layoutY="14.0" prefWidth="150.0" />
-      <ChoiceBox fx:id="langTo" layoutX="480.0" layoutY="14.0" prefWidth="150.0" />
+      <TextField fx:id="needTrans" alignment="TOP_LEFT" layoutX="14.0" layoutY="73.0" prefHeight="389.0" prefWidth="291.0">
+         <font>
+            <Font name="Times New Roman" size="24.0" />
+         </font></TextField>
+      <TextField fx:id="Transed" alignment="TOP_LEFT" editable="false" layoutX="480.0" layoutY="73.0" prefHeight="389.0" prefWidth="291.0">
+         <font>
+            <Font name="Times New Roman" size="24.0" />
+         </font></TextField>
+      <ChoiceBox fx:id="langFrom" layoutX="14.0" layoutY="14.0" nodeOrientation="LEFT_TO_RIGHT" prefWidth="150.0" />
+      <ChoiceBox fx:id="langTo" layoutX="480.0" layoutY="14.0" nodeOrientation="LEFT_TO_RIGHT" prefWidth="150.0" />
       <ImageView fitHeight="150.0" fitWidth="144.0" layoutX="319.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@/image/start.png" />

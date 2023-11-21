@@ -12,7 +12,10 @@
 
 <AnchorPane prefHeight="562.5" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Delete">
    <children>
-      <TextField fx:id="textField" layoutX="247.0" layoutY="17.0" onKeyReleased="#inputWordEventHandle" prefHeight="46.0" prefWidth="518.0" />
+      <TextField fx:id="textField" layoutX="247.0" layoutY="17.0" onKeyReleased="#inputWordEventHandle" prefHeight="46.0" prefWidth="518.0">
+         <font>
+            <Font name="Times New Roman" size="24.0" />
+         </font></TextField>
       <ListView fx:id="wordList" layoutX="248.0" layoutY="78.0" onMouseClicked="#wordListClicked" prefHeight="301.0" prefWidth="516.0" />
       <Text layoutX="18.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Word" wrappingWidth="239.57815551757812">
          <font>

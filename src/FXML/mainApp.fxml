@@ -32,9 +32,15 @@
       </Text>
       <AnchorPane fx:id="searchAnchorPane" layoutX="188.0" layoutY="72.0" prefHeight="471.0" prefWidth="817.0">
          <children>
-            <TextField fx:id="textField" layoutX="14.0" layoutY="14.0" onKeyReleased="#inputWordEventHandle" prefHeight="33.0" prefWidth="287.0" />
+            <TextField fx:id="textField" layoutX="14.0" layoutY="14.0" onKeyReleased="#inputWordEventHandle" prefHeight="33.0" prefWidth="287.0">
+               <font>
+                  <Font name="Times New Roman" size="18.0" />
+               </font></TextField>
             <ListView fx:id="wordList" layoutX="14.0" layoutY="59.0" onMouseClicked="#wordListClicked" prefHeight="377.0" prefWidth="287.0" />
-            <TextArea fx:id="t" layoutX="309.0" layoutY="14.0" prefHeight="421.0" prefWidth="495.0" />
+            <TextArea fx:id="t" editable="false" layoutX="309.0" layoutY="14.0" prefHeight="421.0" prefWidth="495.0">
+               <font>
+                  <Font name="Times New Roman" size="24.0" />
+               </font></TextArea>
             <ImageView fitHeight="80.0" fitWidth="104.0" layoutX="675.0" layoutY="355.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@/image/img1.jpg" />

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
@@ -7,14 +8,51 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane prefHeight="602.0" prefWidth="817.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Update">
+<AnchorPane prefHeight="562.5" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Update">
     <children>
-        <TextField fx:id="textField" layoutX="26.0" layoutY="27.0" onKeyReleased="#inputWordEventHandle" prefHeight="39.0" prefWidth="284.0" />
-        <ListView fx:id="wordList" layoutX="26.0" layoutY="83.0" onMouseClicked="#wordListClicked" prefHeight="491.0" prefWidth="284.0" />
-        <TextArea fx:id="t" layoutX="330.0" layoutY="27.0" prefHeight="172.0" prefWidth="478.0" />
-        <TextField fx:id="UpdateMean" layoutX="330.0" layoutY="237.0" prefHeight="277.0" prefWidth="478.0" />
-        <Text layoutX="543.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sửa thành" />
-        <Button layoutX="543.0" layoutY="529.0" mnemonicParsing="false" onAction="#update" prefHeight="46.0" prefWidth="88.0" text="Sửa" />
+        <ListView fx:id="wordList" layoutX="14.0" layoutY="59.0" onMouseClicked="#wordListClicked" prefHeight="377.0" prefWidth="287.0" />
+        <TextArea fx:id="t" layoutX="330.0" layoutY="14.0" prefHeight="172.0" prefWidth="478.0">
+         <font>
+            <Font name="Times New Roman" size="18.0" />
+         </font></TextArea>
+        <TextField fx:id="UpdateMean" alignment="TOP_LEFT" layoutX="330.0" layoutY="237.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="198.0" prefWidth="478.0">
+         <font>
+            <Font name="Times New Roman" size="18.0" />
+         </font></TextField>
+      <TextField fx:id="textField" layoutX="14.0" layoutY="14.0" onKeyReleased="#inputWordEventHandle" prefHeight="33.0" prefWidth="287.0">
+         <font>
+            <Font name="Times New Roman" size="18.0" />
+         </font>
+      </TextField>
+      <ImageView fitHeight="32.0" fitWidth="120.0" layoutX="266.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@/icons/icons8_search_64px.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="55.0" fitWidth="57.0" layoutX="753.0" layoutY="380.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@/icons/icons8_edit_property_64px.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="46.0" fitWidth="94.0" layoutX="523.0" layoutY="436.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@/image/start.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="509.0" layoutY="436.0" mnemonicParsing="false" onAction="#update" prefHeight="46.0" prefWidth="121.0" style="-fx-background-color: 54473c;" stylesheets="@../style.css" text="Update" textFill="#ff6f6f">
+         <font>
+            <Font name="Times New Roman" size="24.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="55.0" fitWidth="57.0" layoutX="753.0" layoutY="131.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@/icons/icons8_edit_64px.png" />
+         </image>
+      </ImageView>
+      <Text fill="#ff3d3d" layoutX="516.0" layoutY="217.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Update to" wrappingWidth="106.21630859375">
+         <font>
+            <Font name="Times New Roman" size="24.0" />
+         </font>
+      </Text>
     </children>
 </AnchorPane>
