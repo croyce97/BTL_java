@@ -12,5 +12,6 @@
       <TextField fx:id="textField" layoutX="24.0" layoutY="40.0" />
       <TextArea fx:id="textArea" layoutX="218.0" layoutY="27.0" prefHeight="355.0" prefWidth="374.0" />
       <ListView fx:id="wordList" layoutX="12.0" layoutY="84.0" prefHeight="296.0" prefWidth="200.0" />
+      <Button layoutX="506.0" layoutY="46.0" mnemonicParsing="false" onAction="#Speak" text="Speak" />
    </children>
 </AnchorPane>
