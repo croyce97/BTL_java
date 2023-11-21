@@ -1,5 +1,6 @@
 package Controller;
 
+import API.TextToSpeech;
 import Data.Data;
 import Data.Word;
 import javafx.event.ActionEvent;
@@ -21,6 +22,7 @@ public class Search implements Initializable {
     TextField textField;
     @FXML
     TextArea t;
+    Word word;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         wordList.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
@@ -28,7 +30,7 @@ public class Search implements Initializable {
         wordList.getItems().addAll(Data.prefixSearch(""));
     }
     public void wordListClicked(){
-        Word word = wordList.getSelectionModel().getSelectedItem();
+        word = wordList.getSelectionModel().getSelectedItem();
         t.setText(word.getMean());
     }
     public void inputWordEventHandle(KeyEvent e) {
@@ -36,6 +38,6 @@ public class Search implements Initializable {
         wordList.getItems().addAll(Data.prefixSearch(textField.getText()));
     }
     public void Speak(ActionEvent actionEvent) {
-
+        TextToSpeech.Speak(word);
     }
 }

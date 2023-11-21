@@ -83,7 +83,7 @@ public class UpdateSQL {
                 System.out.println("tu da duoc xoa");
 
             }
-            else System.out.println("khogn xoa dc tu");
+            else System.out.println("khong xoa dc tu");
             connectionDB.close();
         } catch (Exception b) {
             System.err.println("Got an exception!");

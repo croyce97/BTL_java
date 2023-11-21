@@ -33,6 +33,6 @@ public class Delete implements Initializable {
         wordList.getItems().addAll(Data.prefixSearch(textField.getText()));
     }
     public void DeleteButton(ActionEvent actionEvent) {
-
+        Data.Delete(word);
     }
 }
