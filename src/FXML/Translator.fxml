@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.image.*?>
-<?import javafx.scene.paint.*?>
-<?import java.lang.*?>
-<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="562.5" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Translator">
+<AnchorPane prefHeight="562.5" prefWidth="1000.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Translator">
    <children>
       <TextField fx:id="needTrans" alignment="TOP_LEFT" layoutX="14.0" layoutY="73.0" prefHeight="389.0" prefWidth="291.0">
          <font>
@@ -55,7 +54,7 @@
             <Image url="@/icons/icons8_arrow_64px.png" />
          </image>
       </ImageView>
-      <Button layoutX="319.0" layoutY="214.0" mnemonicParsing="false" onAction="#Trans" prefHeight="44.0" prefWidth="144.0" style="-fx-background-color: 513113;" stylesheets="@../style.css">
+      <Button layoutX="319.0" layoutY="214.0" mnemonicParsing="false" onAction="#Trans" prefHeight="44.0" prefWidth="144.0" style="-fx-background-color: transparent;">
          <effect>
             <SepiaTone />
          </effect>

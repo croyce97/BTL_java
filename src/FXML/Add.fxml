@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.effect.*?>
-<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="562.5" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Add">
+<AnchorPane prefHeight="562.5" prefWidth="1000.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Add">
    <children>
       <TextField fx:id="Wordin" layoutX="37.0" layoutY="53.0" prefHeight="66.0" prefWidth="276.0">
          <font>
@@ -59,7 +57,7 @@
             <Image url="@/image/start.png" />
          </image>
       </ImageView>
-      <Button layoutX="95.0" layoutY="391.0" mnemonicParsing="false" onAction="#OkeAndAdd" prefHeight="73.0" prefWidth="142.0" style="-fx-background-color: 54473c;" stylesheets="@/style.css" text="Add" textFill="#ff5959">
+      <Button alignment="CENTER" layoutX="95.0" layoutY="391.0" mnemonicParsing="false" onAction="#OkeAndAdd" prefHeight="73.0" prefWidth="142.0" style="-fx-background-color: transparent;" stylesheets="@/style.css" text="Add" textFill="#ff5959">
          <font>
             <Font name="Times New Roman Bold" size="24.0" />
          </font>

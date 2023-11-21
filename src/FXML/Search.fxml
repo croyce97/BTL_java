@@ -21,7 +21,7 @@
       <ListView fx:id="wordList" layoutX="14.0" layoutY="59.0" onMouseClicked="#wordListClicked" prefHeight="377.0" prefWidth="287.0" />
       <ImageView fitHeight="32.0" fitWidth="120.0" layoutX="269.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../icons/icons8_search_64px.png" />
+            <Image url="@/icons/icons8_search_64px.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="80.0" fitWidth="104.0" layoutX="675.0" layoutY="355.0" pickOnBounds="true" preserveRatio="true">
@@ -29,6 +29,11 @@
             <Image url="@/image/img1.jpg" />
          </image>
       </ImageView>
-      <Button layoutX="721.0" layoutY="32.0" mnemonicParsing="false" onAction="#Speak" text="Speak" />
+      <ImageView fitHeight="45.0" fitWidth="53.0" layoutX="749.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@/icons/icons8_speaker_64px.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="758.0" layoutY="24.0" mnemonicParsing="false" onAction="#Speak" prefHeight="27.0" prefWidth="45.0" style="-fx-background-color: transparent;" />
    </children>
 </AnchorPane>
