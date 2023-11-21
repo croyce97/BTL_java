@@ -16,6 +16,7 @@ public class Game {
     @FXML
     private Button startButton;
 
+    // tạo pair từ và nghĩa của 10 cặp từ
     private String[][] crosswordPairs = new String[10][2];
 
     @FXML
@@ -25,6 +26,7 @@ public class Game {
         displayCrosswords();
     }
 
+    //tạo pair
     private void loadCrosswordPairs() {
         List<String[]> wordPairs = new ArrayList<>(Arrays.asList(
                 new String[]{"Water", "Nước"},
@@ -39,13 +41,14 @@ public class Game {
                 new String[]{"Food", "Thức ăn"}
         ));
 
+        // xáo trộn ngẫu nhiên
         Collections.shuffle(wordPairs);
-
         for (int i = 0; i < 10; i++) {
             crosswordPairs[i] = wordPairs.get(i);
         }
     }
 
+    // tạo nút bấm cho từ và nghĩa
     private void displayCrosswords() {
         // List to hold all words (both English and Vietnamese)
         List<String> words = new ArrayList<>();
@@ -72,6 +75,10 @@ public class Game {
             gridPane.add(button, col, row);
         }
     }
+
+    //lần đầu ấn vào 1 từ, ghi nhớ vị trí ô đó,
+    // nếu lần thứ 2 ấn vào từ mà cùng pair với từ thứ nhất thì xoá cả 2 từ đó đi.
+    // Nếu không thì huỷ ghi nhớ vị trí ô đầu tiên 
     private Button firstButtonClicked = null;
     private String firstWord = null;
     private int firstButtonRow = -1;
