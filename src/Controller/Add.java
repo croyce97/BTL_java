@@ -56,8 +56,6 @@ public class Add {
             Word word1 = new Word(Data.idxMax,word,mean);
             Data.Add(word1);
             oke.setText("tu da duoc them");
-
-
         }
     }
 }

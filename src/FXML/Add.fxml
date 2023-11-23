@@ -57,7 +57,7 @@
             <Image url="@/image/start.png" />
          </image>
       </ImageView>
-      <Button alignment="CENTER" layoutX="95.0" layoutY="391.0" mnemonicParsing="false" onAction="#OkeAndAdd" prefHeight="73.0" prefWidth="142.0" style="-fx-background-color: transparent;" stylesheets="@/style.css" text="Add" textFill="#ff5959">
+      <Button alignment="CENTER" layoutX="95.0" layoutY="391.0" mnemonicParsing="false" onAction="#OkeAndAdd" prefHeight="73.0" prefWidth="142.0" style="-fx-background-color: transparent;" text="Add" textFill="#ff5959">
          <font>
             <Font name="Times New Roman Bold" size="24.0" />
          </font>

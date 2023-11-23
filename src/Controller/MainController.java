@@ -57,7 +57,7 @@ public class MainController implements Initializable {
         wordList.getItems().clear();
         wordList.getItems().addAll(Data.prefixSearch(""));
         try {
-            GameAnchorPane = FXMLLoader.load(getClass().getResource("/FXML/Game.fxml"));
+            GameAnchorPane = FXMLLoader.load(getClass().getResource("/FXML/StartGame.fxml"));
             TranslatorAnchorPane = FXMLLoader.load(getClass().getResource("/FXML/Translator.fxml"));
             AddAnchorPane = FXMLLoader.load(getClass().getResource("/FXML/Add.fxml"));
             UpdateAnchorPane = FXMLLoader.load(getClass().getResource("/FXML/Update.fxml"));
