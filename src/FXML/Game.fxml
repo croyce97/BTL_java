@@ -9,7 +9,7 @@
 
 <AnchorPane prefHeight="450.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Game">
    <children>
-      <Button contentDisplay="CENTER" layoutX="269.0" layoutY="170.0" mnemonicParsing="false" text="Button">
+      <Button contentDisplay="CENTER" layoutX="14.0" layoutY="23.0" mnemonicParsing="false" text="Button">
          <cursor>
             <Cursor fx:constant="NONE" />
          </cursor>

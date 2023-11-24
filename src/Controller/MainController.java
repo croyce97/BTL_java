@@ -50,7 +50,6 @@ public class MainController implements Initializable {
     AnchorPane AddAnchorPane;
     AnchorPane UpdateAnchorPane;
     AnchorPane DeleteAnchorPane;
-    Word word;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         wordList.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
@@ -72,7 +71,7 @@ public class MainController implements Initializable {
     }
 
     public void wordListClicked(){
-        word = wordList.getSelectionModel().getSelectedItem();
+        Word word = wordList.getSelectionModel().getSelectedItem();
         t.setText(word.getMean());
     }
     public void inputWordEventHandle(KeyEvent e) {
@@ -108,6 +107,7 @@ public class MainController implements Initializable {
         }
     }
     public void Speak(ActionEvent actionEvent) {
+        Word word = wordList.getSelectionModel().getSelectedItem();
         TextToSpeech.Speak(word);
     }
     public void setMainPane(AnchorPane pane) {

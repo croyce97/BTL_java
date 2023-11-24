@@ -1,12 +1,17 @@
 package Controller;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
-import java.util.Collections;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import javafx.stage.Stage;
+
+import java.io.IOException;
+import java.net.URL;
+import java.util.*;
 
 public class Game {
 
@@ -133,6 +138,24 @@ public class Game {
 //        firstButtonRow = -1;
 //        firstButtonCol = -1;
 //    }
+    @FXML
+    AnchorPane anchorPane;
+    @FXML
+    AnchorPane GameAnchorPane;
+
+
+    public void playNow(ActionEvent actionEvent) {
+        try {
+            GameAnchorPane = FXMLLoader.load(getClass().getResource("/FXML/Game.fxml"));
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        setMainPane(GameAnchorPane);
+    }
+    public void setMainPane(AnchorPane pane) {
+        anchorPane.getChildren().clear();
+        anchorPane.getChildren().addAll(pane);
+    }
 }
 
 
