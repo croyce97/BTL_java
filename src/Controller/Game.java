@@ -8,141 +8,27 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
+import javafx.scene.control.Control;
+import javafx.util.Duration;
 
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.ResourceBundle;
 import java.io.IOException;
 import java.net.URL;
 import java.util.*;
 
-public class Game {
+public class Game implements Initializable {
 
-//    @FXML
-//    private GridPane gridPane;
-//
-//    @FXML
-//    private Button startButton;
-//
-//    // tạo pair từ và nghĩa của 10 cặp từ
-//    private String[][] crosswordPairs = new String[10][2];
-//
-//    @FXML
-//    private void handleStart() {
-//        // Load crossword pairs and display them in the grid
-//        loadCrosswordPairs();
-//        displayCrosswords();
-//    }
-//
-//    //tạo pair
-//    private void loadCrosswordPairs() {
-//        List<String[]> wordPairs = new ArrayList<>(Arrays.asList(
-//                new String[]{"Water", "Nước"},
-//                new String[]{"Chair", "Ghế"},
-//                new String[]{"Tree", "Cây"},
-//                new String[]{"Book", "Sách"},
-//                new String[]{"Dog", "Chó"},
-//                new String[]{"Movie", "Phim ảnh"},
-//                new String[]{"Car", "Xe hơi"},
-//                new String[]{"Music", "Nhạc"},
-//                new String[]{"Apple", "Quả táo"},
-//                new String[]{"Food", "Thức ăn"}
-//        ));
-//
-//        // xáo trộn ngẫu nhiên
-//        Collections.shuffle(wordPairs);
-//        for (int i = 0; i < 10; i++) {
-//            crosswordPairs[i] = wordPairs.get(i);
-//        }
-//    }
-//
-//    // tạo nút bấm cho từ và nghĩa
-//    private void displayCrosswords() {
-//        // List to hold all words (both English and Vietnamese)
-//        List<String> words = new ArrayList<>();
-//
-//        // Add all words to the list
-//        for (String[] pair : crosswordPairs) {
-//            Collections.addAll(words, pair);
-//        }
-//
-//        // Shuffle the list to randomize the layout
-//        Collections.shuffle(words);
-//
-//        // Calculate the number of rows and columns for the grid
-//        int numRows = 4; // Example, adjust as needed
-//        int numCols = 5; // Example, adjust as needed
-//
-//        // Add buttons to the grid
-//        for (int i = 0; i < words.size(); i++) {
-//            Button button = new Button(words.get(i));
-//            button.setOnAction(event -> handleButtonClick(button));
-//            int row = i / numCols;
-//            int col = i % numCols;
-//
-//            gridPane.add(button, col, row);
-//        }
-//    }
-//
-//    //lần đầu ấn vào 1 từ, ghi nhớ vị trí ô đó,
-//    // nếu lần thứ 2 ấn vào từ mà cùng pair với từ thứ nhất thì xoá cả 2 từ đó đi.
-//    // Nếu không thì huỷ ghi nhớ vị trí ô đầu tiên
-//    private Button firstButtonClicked = null;
-//    private String firstWord = null;
-//    private int firstButtonRow = -1;
-//    private int firstButtonCol = -1;
-//
-//    private void handleButtonClick(Button button) {
-//        String currentWord = button.getText();
-//        int currentRow = GridPane.getRowIndex(button);
-//        int currentCol = GridPane.getColumnIndex(button);
-//
-//        if (firstButtonClicked == null) {
-//            // This is the first button click
-//            firstButtonClicked = button;
-//            firstWord = currentWord;
-//            firstButtonRow = currentRow;
-//            firstButtonCol = currentCol;
-//        } else {
-//            // This is the second button click
-//            if (isMatchingPair(firstWord, currentWord) &&
-//                    (firstButtonRow != currentRow || firstButtonCol != currentCol)) {
-//                // It's a matching pair and not the same button clicked twice
-//                removeButton(firstButtonClicked);
-//                removeButton(button);
-//
-//                // Reset the first button memory
-//                resetFirstButtonMemory();
-//            } else {
-//                // Not a matching pair or same button clicked twice, reset memory
-//                resetFirstButtonMemory();
-//            }
-//        }
-//    }
-//
-//    private boolean isMatchingPair(String word1, String word2) {
-//        // Check if the words are a matching pair
-//        for (String[] pair : crosswordPairs) {
-//            if ((pair[0].equals(word1) && pair[1].equals(word2)) ||
-//                    (pair[0].equals(word2) && pair[1].equals(word1))) {
-//                return true;
-//            }
-//        }
-//        return false;
-//    }
-//
-//    private void removeButton(Button button) {
-//        gridPane.getChildren().remove(button);
-//    }
-//
-//    private void resetFirstButtonMemory() {
-//        firstButtonClicked = null;
-//        firstWord = null;
-//        firstButtonRow = -1;
-//        firstButtonCol = -1;
-//    }
     @FXML
     AnchorPane anchorPane;
     @FXML
     AnchorPane GameAnchorPane;
 
+    private int num=0;
 
     public void playNow(ActionEvent actionEvent) {
         try {
@@ -156,6 +42,91 @@ public class Game {
         anchorPane.getChildren().clear();
         anchorPane.getChildren().addAll(pane);
     }
+    ArrayList<Button> buttons = new ArrayList<>();
+
+    MatchingGame matchingGame = new MatchingGame();
+
+    @FXML
+    private Button button0;
+    @FXML
+    private Button button1;
+    @FXML
+    private Button button2;
+    @FXML
+    private Button button3;
+    @FXML
+    private Button button4;
+    @FXML
+    private Button button5;
+    @FXML
+    private Button button6;
+    @FXML
+    private Button button7;
+
+    Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1.5), e -> hideButtons()));
+
+    private boolean firstButtonClicked = false;
+
+    private int firstButtonIndex;
+    private int secondButtonIndex;
+    private boolean match;
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        matchingGame.setupGame();
+
+        buttons.addAll(Arrays.asList(button0, button1, button2, button3, button4,
+                button5, button6, button7));
+    }
+
+    @FXML
+    void buttonClicked(ActionEvent event) {
+        if(!firstButtonClicked){
+            //If next turn is started before old buttons are hidden
+            if(!match){
+                hideButtons();
+                timeline.stop();
+            }
+            match = false;
+            firstButtonClicked = true;
+
+            //Get clicked button memory letter
+            String buttonId = ((Control)event.getSource()).getId();
+            firstButtonIndex = Integer.parseInt(buttonId.substring(buttonId.length() - 1));
+
+            //Change clicked button text
+            buttons.get(firstButtonIndex).setText(matchingGame.getOptionAtIndex(firstButtonIndex));
+
+            return;
+        }
+
+        //Get clicked button memory letter
+        String buttonId = ((Control)event.getSource()).getId();
+        secondButtonIndex = Integer.parseInt(buttonId.substring(buttonId.length() - 1));
+
+        //Change clicked button text
+        buttons.get(secondButtonIndex).setText(matchingGame.getOptionAtIndex(secondButtonIndex));
+
+        firstButtonClicked = false;
+
+        //Check if the two clicked button match
+        if(matchingGame.checkTwoPositions(firstButtonIndex,secondButtonIndex)){
+            match = true;
+            num++;
+            if (num==4) {
+                //chuyển sang Win.fxml
+            }
+            return;
+        }
+
+        timeline.play();
+    }
+
+    private void hideButtons(){
+        buttons.get(firstButtonIndex).setText("");
+        buttons.get(secondButtonIndex).setText("");
+    }
+
 }
 
 

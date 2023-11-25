@@ -49,7 +49,7 @@
                   <Image url="@/icons/icons8_search_64px.png" />
                </image>
             </ImageView>
-            <Button contentDisplay="CENTER" layoutX="749.0" layoutY="29.0" mnemonicParsing="false" onAction="#Speak" style="-fx-background-color: transparent;" stylesheets="@../style.css" />
+            <Button contentDisplay="CENTER" layoutX="749.0" layoutY="29.0" mnemonicParsing="false" onAction="#Speak" style="-fx-background-color: transparent;" />
             <Button layoutX="749.0" layoutY="18.0" mnemonicParsing="false" onAction="#Speak" prefHeight="45.0" prefWidth="45.0" style="-fx-background-color: transparent;" />
             <ImageView fitHeight="45.0" fitWidth="53.0" layoutX="749.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
                <image>

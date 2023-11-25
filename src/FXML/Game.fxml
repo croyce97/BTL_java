@@ -1,20 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
 <?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="450.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.PlayingGame">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="562.5" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Game">
    <children>
-      <Button contentDisplay="CENTER" layoutX="14.0" layoutY="23.0" mnemonicParsing="false" text="Button">
-         <cursor>
-            <Cursor fx:constant="NONE" />
-         </cursor>
-         <effect>
-            <SepiaTone />
-         </effect></Button>
+      <ImageView fitHeight="458.0" fitWidth="773.0" layoutX="19.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/totoro.jpg" />
+         </image>
+      </ImageView>
+      <VBox layoutX="406.0" layoutY="64.0" prefHeight="300.0" prefWidth="300.0">
+         <children>
+            <HBox prefHeight="100.0" prefWidth="300.0">
+               <children>
+                  <Button fx:id="button0" mnemonicParsing="false" onAction="#buttonClicked" prefHeight="100.0" prefWidth="100.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <effect>
+                        <SepiaTone level="0.36" />
+                     </effect>
+                  </Button>
+                  <Button fx:id="button1" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#buttonClicked" prefHeight="100.0" prefWidth="100.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <effect>
+                        <SepiaTone level="0.36" />
+                     </effect>
+                  </Button>
+                  <Button fx:id="button2" layoutX="235.0" layoutY="10.0" mnemonicParsing="false" onAction="#buttonClicked" prefHeight="100.0" prefWidth="100.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <effect>
+                        <SepiaTone level="0.36" />
+                     </effect>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="300.0">
+               <children>
+                  <Button fx:id="button3" mnemonicParsing="false" onAction="#buttonClicked" prefHeight="100.0" prefWidth="100.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <effect>
+                        <SepiaTone level="0.36" />
+                     </effect>
+                  </Button>
+                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: transparent;">
+                     <font>
+                        <Font size="32.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="button5" layoutX="110.0" layoutY="10.0" mnemonicParsing="false" onAction="#buttonClicked" prefHeight="100.0" prefWidth="100.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <effect>
+                        <SepiaTone level="0.36" />
+                     </effect>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="110.0" prefHeight="100.0" prefWidth="300.0">
+               <children>
+                  <Button fx:id="button6" mnemonicParsing="false" onAction="#buttonClicked" prefHeight="100.0" prefWidth="100.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <effect>
+                        <SepiaTone level="0.36" />
+                     </effect>
+                  </Button>
+                  <Button fx:id="button7" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#buttonClicked" prefHeight="100.0" prefWidth="100.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <effect>
+                        <SepiaTone level="0.36" />
+                     </effect>
+                  </Button>
+                  <Button fx:id="button4" mnemonicParsing="false" onAction="#buttonClicked" prefHeight="100.0" prefWidth="100.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <effect>
+                        <SepiaTone level="0.36" />
+                     </effect>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
    </children>
 </AnchorPane>
