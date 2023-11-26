@@ -21,14 +21,13 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.*;
 
-public class Game implements Initializable {
+public class Game {
 
     @FXML
     AnchorPane anchorPane;
     @FXML
     AnchorPane GameAnchorPane;
 
-    private int num=0;
 
     public void playNow(ActionEvent actionEvent) {
         try {
@@ -38,95 +37,11 @@ public class Game implements Initializable {
         }
         setMainPane(GameAnchorPane);
     }
+
     public void setMainPane(AnchorPane pane) {
         anchorPane.getChildren().clear();
         anchorPane.getChildren().addAll(pane);
     }
-    ArrayList<Button> buttons = new ArrayList<>();
-
-    MatchingGame matchingGame = new MatchingGame();
-
-    @FXML
-    private Button button0;
-    @FXML
-    private Button button1;
-    @FXML
-    private Button button2;
-    @FXML
-    private Button button3;
-    @FXML
-    private Button button4;
-    @FXML
-    private Button button5;
-    @FXML
-    private Button button6;
-    @FXML
-    private Button button7;
-
-    Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1.5), e -> hideButtons()));
-
-    private boolean firstButtonClicked = false;
-
-    private int firstButtonIndex;
-    private int secondButtonIndex;
-    private boolean match;
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        matchingGame.setupGame();
-
-        buttons.addAll(Arrays.asList(button0, button1, button2, button3, button4,
-                button5, button6, button7));
-    }
-
-    @FXML
-    void buttonClicked(ActionEvent event) {
-        if(!firstButtonClicked){
-            //If next turn is started before old buttons are hidden
-            if(!match){
-                hideButtons();
-                timeline.stop();
-            }
-            match = false;
-            firstButtonClicked = true;
-
-            //Get clicked button memory letter
-            String buttonId = ((Control)event.getSource()).getId();
-            firstButtonIndex = Integer.parseInt(buttonId.substring(buttonId.length() - 1));
-
-            //Change clicked button text
-            buttons.get(firstButtonIndex).setText(matchingGame.getOptionAtIndex(firstButtonIndex));
-
-            return;
-        }
-
-        //Get clicked button memory letter
-        String buttonId = ((Control)event.getSource()).getId();
-        secondButtonIndex = Integer.parseInt(buttonId.substring(buttonId.length() - 1));
-
-        //Change clicked button text
-        buttons.get(secondButtonIndex).setText(matchingGame.getOptionAtIndex(secondButtonIndex));
-
-        firstButtonClicked = false;
-
-        //Check if the two clicked button match
-        if(matchingGame.checkTwoPositions(firstButtonIndex,secondButtonIndex)){
-            match = true;
-            num++;
-            if (num==4) {
-                //chuyển sang Win.fxml
-            }
-            return;
-        }
-
-        timeline.play();
-    }
-
-    private void hideButtons(){
-        buttons.get(firstButtonIndex).setText("");
-        buttons.get(secondButtonIndex).setText("");
-    }
-
 }
 
 
