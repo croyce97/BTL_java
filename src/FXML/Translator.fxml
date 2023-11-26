@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.image.*?>
@@ -7,9 +8,9 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="562.5" prefWidth="1000.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Translator">
+<AnchorPane prefHeight="562.5" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Translator">
    <children>
-      <TextField fx:id="needTrans" alignment="TOP_LEFT" layoutX="14.0" layoutY="73.0" prefHeight="389.0" prefWidth="291.0">
+      <TextField fx:id="needTrans" alignment="TOP_LEFT" layoutX="14.0" layoutY="73.0" prefHeight="389.0" prefWidth="291.0" promptText="Enter Paragraph">
          <font>
             <Font name="Times New Roman" size="24.0" />
          </font></TextField>

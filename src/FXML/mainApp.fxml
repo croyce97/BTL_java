@@ -30,7 +30,7 @@
       </Text>
       <AnchorPane fx:id="searchAnchorPane" layoutX="188.0" layoutY="72.0" prefHeight="471.0" prefWidth="817.0">
          <children>
-            <TextField fx:id="textField" layoutX="14.0" layoutY="14.0" onKeyReleased="#inputWordEventHandle" prefHeight="33.0" prefWidth="287.0">
+            <TextField fx:id="textField" layoutX="14.0" layoutY="14.0" onKeyReleased="#inputWordEventHandle" prefHeight="33.0" prefWidth="287.0" promptText="Enter Word">
                <font>
                   <Font name="Times New Roman" size="18.0" />
                </font></TextField>

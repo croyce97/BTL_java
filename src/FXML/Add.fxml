@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="562.5" prefWidth="1000.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Add">
+<AnchorPane prefHeight="562.5" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Add">
    <children>
-      <TextField fx:id="Wordin" layoutX="37.0" layoutY="53.0" prefHeight="66.0" prefWidth="276.0">
+      <TextField fx:id="Wordin" layoutX="37.0" layoutY="53.0" prefHeight="66.0" prefWidth="276.0" promptText="Enter Word">
          <font>
             <Font name="Times New Roman" size="24.0" />
          </font></TextField>
@@ -25,23 +26,35 @@
             </LinearGradient>
          </fill>
       </Text>
-      <TextField fx:id="Classs" layoutX="37.0" layoutY="184.0" prefHeight="66.0" prefWidth="276.0">
+      <TextField fx:id="Classs" layoutX="37.0" layoutY="184.0" prefHeight="66.0" prefWidth="276.0" promptText="Enter WordClass">
          <font>
             <Font name="Times New Roman" size="24.0" />
          </font></TextField>
-      <TextField fx:id="Pronoun" layoutX="37.0" layoutY="303.0" prefHeight="66.0" prefWidth="276.0">
+      <TextField fx:id="Pronoun" layoutX="37.0" layoutY="303.0" prefHeight="66.0" prefWidth="276.0" promptText="Enter pronunciation">
          <font>
             <Font name="Times New Roman" size="24.0" />
          </font></TextField>
-      <TextField fx:id="Definition" alignment="TOP_LEFT" layoutX="413.0" layoutY="53.0" prefHeight="394.0" prefWidth="377.0">
+      <TextField fx:id="Definition" alignment="TOP_LEFT" layoutX="413.0" layoutY="53.0" prefHeight="394.0" prefWidth="377.0" promptText="Enter difination">
          <font>
             <Font name="Times New Roman" size="24.0" />
          </font></TextField>
-      <Text fx:id="WordError" layoutX="453.0" layoutY="432.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="276.0" />
-      <Text fx:id="ClassError" layoutX="49.0" layoutY="316.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="276.0" />
-      <Text fx:id="PronounError" layoutX="50.0" layoutY="472.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="276.0" />
-      <Text fx:id="DefinitionError" layoutX="446.0" layoutY="512.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="332.0" />
-      <Text fx:id="oke" layoutX="105.0" layoutY="504.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="164.826171875" />
+      <Text fx:id="WordError" layoutX="37.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="276.0">
+         <font>
+            <Font size="24.0" />
+         </font></Text>
+      <Text fx:id="ClassError" layoutX="37.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="276.0">
+         <font>
+            <Font size="24.0" />
+         </font></Text>
+      <Text fx:id="PronounError" layoutX="37.0" layoutY="341.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="276.0">
+         <font>
+            <Font size="24.0" />
+         </font></Text>
+      <Text fx:id="DefinitionError" layoutX="436.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="332.0">
+         <font>
+            <Font size="24.0" />
+         </font></Text>
+      <Text fx:id="oke" layoutX="436.0" layoutY="432.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="164.826171875" />
       <ImageView fitHeight="78.0" fitWidth="123.0" layoutX="251.0" layoutY="388.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@/icons/icons8_checkmark_40px.png" />

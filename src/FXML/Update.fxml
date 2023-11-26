@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="562.5" prefWidth="1000.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Update">
+<AnchorPane prefHeight="562.5" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Update">
     <children>
         <ListView fx:id="wordList" layoutX="14.0" layoutY="59.0" onMouseClicked="#wordListClicked" prefHeight="377.0" prefWidth="287.0" />
-        <TextArea fx:id="t" layoutX="330.0" layoutY="14.0" prefHeight="172.0" prefWidth="478.0">
+        <TextArea fx:id="t" editable="false" layoutX="330.0" layoutY="14.0" prefHeight="172.0" prefWidth="478.0" promptText="Old definition">
          <font>
             <Font name="Times New Roman" size="18.0" />
          </font></TextArea>
-        <TextField fx:id="UpdateMean" alignment="TOP_LEFT" layoutX="330.0" layoutY="237.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="198.0" prefWidth="478.0">
+        <TextField fx:id="UpdateMean" alignment="TOP_LEFT" layoutX="330.0" layoutY="237.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="198.0" prefWidth="478.0" promptText="New definition">
          <font>
             <Font name="Times New Roman" size="18.0" />
          </font></TextField>
-      <TextField fx:id="textField" layoutX="14.0" layoutY="14.0" onKeyReleased="#inputWordEventHandle" prefHeight="33.0" prefWidth="287.0">
+      <TextField fx:id="textField" layoutX="14.0" layoutY="14.0" onKeyReleased="#inputWordEventHandle" prefHeight="33.0" prefWidth="287.0" promptText="Enter Word">
          <font>
             <Font name="Times New Roman" size="18.0" />
          </font>

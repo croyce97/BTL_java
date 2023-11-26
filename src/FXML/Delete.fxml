@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="562.5" prefWidth="1000.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Delete">
+<AnchorPane prefHeight="562.5" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Delete">
    <children>
-      <TextField fx:id="textField" layoutX="247.0" layoutY="17.0" onKeyReleased="#inputWordEventHandle" prefHeight="46.0" prefWidth="518.0">
+      <TextField fx:id="textField" layoutX="247.0" layoutY="17.0" onKeyReleased="#inputWordEventHandle" prefHeight="46.0" prefWidth="518.0" promptText="Enter Word">
          <font>
             <Font name="Times New Roman" size="24.0" />
          </font></TextField>
