@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.image.*?>
@@ -7,7 +8,7 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="startAnchorPane" prefHeight="562.5" prefWidth="1000.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.StartController">
+<AnchorPane fx:id="startAnchorPane" prefHeight="562.5" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.StartController">
    <children>
       <ImageView fitHeight="606.0" fitWidth="1108.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -35,14 +36,14 @@
             <Bloom />
          </effect>
       </Text>
-      <ImageView fitHeight="79.0" fitWidth="116.0" layoutX="864.0" layoutY="514.0">
+      <ImageView fitHeight="79.0" fitWidth="116.0" layoutX="880.0" layoutY="512.0">
          <image>
-            <Image url="@/icons/icons8_great_britain_48px.png" />
+            <Image url="@../icons/icons8_great_britain_48px.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="79.0" fitWidth="116.0" layoutX="701.0" layoutY="512.0">
+      <ImageView fitHeight="79.0" fitWidth="116.0" layoutX="760.0" layoutY="512.0">
          <image>
-            <Image url="@/icons/icons8_vietnam_48px.png" />
+            <Image url="@../icons/icons8_vietnam_48px.png" />
          </image>
       </ImageView>
       <Button alignment="CENTER" contentDisplay="CENTER" layoutX="420.0" layoutY="231.0" mnemonicParsing="false" onAction="#Start" prefHeight="95.0" prefWidth="222.0" style="-fx-background-color: transparent;" text="START" textFill="#ff5959">
