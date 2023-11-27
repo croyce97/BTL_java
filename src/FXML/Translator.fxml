@@ -10,39 +10,39 @@
 
 <AnchorPane prefHeight="562.5" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Translator">
    <children>
-      <TextField fx:id="needTrans" alignment="TOP_LEFT" layoutX="14.0" layoutY="73.0" prefHeight="389.0" prefWidth="291.0" promptText="Enter Paragraph">
+      <TextField fx:id="needTrans" alignment="TOP_LEFT" layoutX="212.0" layoutY="12.0" prefHeight="170.0" prefWidth="576.0" promptText="Enter Paragraph">
          <font>
             <Font name="Times New Roman" size="24.0" />
          </font></TextField>
-      <TextField fx:id="Transed" alignment="TOP_LEFT" editable="false" layoutX="480.0" layoutY="73.0" prefHeight="389.0" prefWidth="291.0">
+      <TextField fx:id="Transed" alignment="TOP_LEFT" editable="false" layoutX="212.0" layoutY="270.0" prefHeight="170.0" prefWidth="576.0">
          <font>
             <Font name="Times New Roman" size="24.0" />
          </font></TextField>
-      <ChoiceBox fx:id="langFrom" layoutX="14.0" layoutY="14.0" nodeOrientation="LEFT_TO_RIGHT" prefWidth="150.0" />
-      <ChoiceBox fx:id="langTo" layoutX="480.0" layoutY="14.0" nodeOrientation="LEFT_TO_RIGHT" prefWidth="150.0" />
-      <ImageView fitHeight="150.0" fitWidth="144.0" layoutX="319.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
+      <ChoiceBox fx:id="langFrom" layoutX="12.0" layoutY="12.0" nodeOrientation="LEFT_TO_RIGHT" prefWidth="150.0" />
+      <ChoiceBox fx:id="langTo" layoutX="12.0" layoutY="270.0" nodeOrientation="LEFT_TO_RIGHT" prefWidth="150.0" />
+      <ImageView fitHeight="69.0" fitWidth="110.0" layoutX="441.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@/image/start.png" />
+            <Image url="@../image/start.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="27.0" fitWidth="52.0" layoutX="118.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="27.0" fitWidth="52.0" layoutX="118.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@/icons/icons8_search_64px.png" />
+            <Image url="@../icons/icons8_search_64px.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="27.0" fitWidth="52.0" layoutX="583.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="27.0" fitWidth="52.0" layoutX="116.0" layoutY="270.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@/icons/icons8_search_64px.png" />
+            <Image url="@../icons/icons8_search_64px.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="106.0" fitWidth="71.0" layoutX="224.0" layoutY="350.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="106.0" fitWidth="71.0" layoutX="700.0" layoutY="73.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@/image/person1.jpg" />
+            <Image url="@../image/person1.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="106.0" fitWidth="71.0" layoutX="702.0" layoutY="349.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="106.0" fitWidth="71.0" layoutX="700.0" layoutY="330.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@/image/person2.jpg" />
+            <Image url="@../image/person2.jpg" />
          </image>
       </ImageView>
       <ImageView fitHeight="62.0" fitWidth="113.0" layoutX="928.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
@@ -50,12 +50,7 @@
             <Image url="@/icons/icons8_google_translate_48px.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="106.0" fitWidth="136.0" layoutX="338.0" layoutY="183.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@/icons/icons8_arrow_64px.png" />
-         </image>
-      </ImageView>
-      <Button layoutX="319.0" layoutY="214.0" mnemonicParsing="false" onAction="#Trans" prefHeight="44.0" prefWidth="144.0" style="-fx-background-color: transparent;">
+      <Button layoutX="384.0" layoutY="205.0" mnemonicParsing="false" onAction="#Trans" prefHeight="44.0" prefWidth="221.0" style="-fx-background-color: transparent;" text="Translate">
          <effect>
             <SepiaTone />
          </effect>
@@ -66,7 +61,7 @@
             <LinearGradient endX="1.0" endY="1.0">
                <stops>
                   <Stop color="#e8e8e8" />
-                  <Stop color="WHITE" offset="1.0" />
+                  <Stop color="#cd2323" offset="1.0" />
                </stops>
             </LinearGradient>
          </textFill>
