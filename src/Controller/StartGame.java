@@ -1,6 +1,4 @@
 package Controller;
-import Data.Data;
-import Data.Word;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -10,12 +8,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Control;
-import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.text.Text;
 import javafx.util.Duration;
-
-import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -48,7 +42,7 @@ public class StartGame implements Initializable {
     @FXML
     private Button button7;
 
-    Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1.5), e -> hideButtons()));
+    Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1.0), e -> hideButtons()));
 
     private boolean firstButtonClicked = false;
 
