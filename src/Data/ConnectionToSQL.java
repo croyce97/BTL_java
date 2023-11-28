@@ -7,10 +7,10 @@ import java.util.List;
 public class ConnectionToSQL {
     private Connection dataBaseLink;
     public Connection DataBaseConnection() {
-        String dataBasename = "classicmodels";
+        String dataBasename = "dictionary";
         String dataBaseUser = "root";
-        String passWord = "canh050104";
-        String url = "jdbc:mysql://localhost:3306/" + dataBasename;
+        String passWord = "bachuet123";
+        String url = "jdbc:mysql://localhost:3307/" + dataBasename;
         try {
 
             dataBaseLink = DriverManager.getConnection(url,dataBaseUser,passWord);

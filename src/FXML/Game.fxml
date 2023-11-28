@@ -14,11 +14,11 @@
             <Image url="@../image/totoro.jpg" />
          </image>
       </ImageView>
-      <VBox layoutX="406.0" layoutY="64.0" prefHeight="300.0" prefWidth="300.0">
+      <VBox layoutX="177.0" layoutY="20.0" prefHeight="420.0" prefWidth="600.0">
          <children>
-            <HBox prefHeight="100.0" prefWidth="300.0">
+            <HBox prefHeight="140.0" prefWidth="600.0">
                <children>
-                  <Button fx:id="button0" mnemonicParsing="false" onAction="#buttonClicked" prefHeight="100.0" prefWidth="100.0">
+                  <Button fx:id="button0" mnemonicParsing="false" onAction="#buttonClicked" prefHeight="142.0" prefWidth="199.0">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -26,7 +26,7 @@
                         <SepiaTone level="0.36" />
                      </effect>
                   </Button>
-                  <Button fx:id="button1" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#buttonClicked" prefHeight="100.0" prefWidth="100.0">
+                  <Button fx:id="button1" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#buttonClicked" prefHeight="140.0" prefWidth="200.0">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -34,7 +34,7 @@
                         <SepiaTone level="0.36" />
                      </effect>
                   </Button>
-                  <Button fx:id="button2" layoutX="235.0" layoutY="10.0" mnemonicParsing="false" onAction="#buttonClicked" prefHeight="100.0" prefWidth="100.0">
+                  <Button fx:id="button2" layoutX="235.0" layoutY="10.0" mnemonicParsing="false" onAction="#buttonClicked" prefHeight="141.0" prefWidth="200.0">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -44,9 +44,9 @@
                   </Button>
                </children>
             </HBox>
-            <HBox layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="300.0">
+            <HBox layoutX="10.0" layoutY="10.0" prefHeight="140.0" prefWidth="600.0">
                <children>
-                  <Button fx:id="button3" mnemonicParsing="false" onAction="#buttonClicked" prefHeight="100.0" prefWidth="100.0">
+                  <Button fx:id="button3" mnemonicParsing="false" onAction="#buttonClicked" prefHeight="140.0" prefWidth="201.0">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -54,12 +54,12 @@
                         <SepiaTone level="0.36" />
                      </effect>
                   </Button>
-                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: transparent;">
+                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="143.0" prefWidth="196.0" style="-fx-background-color: transparent;">
                      <font>
                         <Font size="32.0" />
                      </font>
                   </Button>
-                  <Button fx:id="button5" layoutX="110.0" layoutY="10.0" mnemonicParsing="false" onAction="#buttonClicked" prefHeight="100.0" prefWidth="100.0">
+                  <Button fx:id="button5" layoutX="110.0" layoutY="10.0" mnemonicParsing="false" onAction="#buttonClicked" prefHeight="141.0" prefWidth="205.0">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -69,9 +69,9 @@
                   </Button>
                </children>
             </HBox>
-            <HBox layoutX="10.0" layoutY="110.0" prefHeight="100.0" prefWidth="300.0">
+            <HBox layoutX="10.0" layoutY="110.0" prefHeight="140.0" prefWidth="600.0">
                <children>
-                  <Button fx:id="button6" mnemonicParsing="false" onAction="#buttonClicked" prefHeight="100.0" prefWidth="100.0">
+                  <Button fx:id="button6" mnemonicParsing="false" onAction="#buttonClicked" prefHeight="148.0" prefWidth="201.0">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -79,7 +79,7 @@
                         <SepiaTone level="0.36" />
                      </effect>
                   </Button>
-                  <Button fx:id="button7" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#buttonClicked" prefHeight="100.0" prefWidth="100.0">
+                  <Button fx:id="button7" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#buttonClicked" prefHeight="143.0" prefWidth="198.0">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -87,7 +87,7 @@
                         <SepiaTone level="0.36" />
                      </effect>
                   </Button>
-                  <Button fx:id="button4" mnemonicParsing="false" onAction="#buttonClicked" prefHeight="100.0" prefWidth="100.0">
+                  <Button fx:id="button4" mnemonicParsing="false" onAction="#buttonClicked" prefHeight="145.0" prefWidth="201.0">
                      <font>
                         <Font size="18.0" />
                      </font>

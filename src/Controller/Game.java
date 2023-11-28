@@ -21,7 +21,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.*;
 
-public class Game {
+public class Game{
 
     @FXML
     AnchorPane anchorPane;
@@ -31,10 +31,11 @@ public class Game {
 
     public void playNow(ActionEvent actionEvent) {
         try {
-            GameAnchorPane = FXMLLoader.load(getClass().getResource("/FXML/Game.fxml"));
+                GameAnchorPane = FXMLLoader.load(getClass().getResource("/FXML/Game.fxml"));
         } catch (Exception ex) {
             ex.printStackTrace();
         }
+
         setMainPane(GameAnchorPane);
     }
 
