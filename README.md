@@ -49,4 +49,4 @@ Modify options -> Add VM options
 
 ## Preview 
 
-![demo]("https://github.com/croyce97/BTL_java-2/assets/125856531/100814bb-bb57-4d65-abbe-920c014ab45d")
+![demo](https://github.com/croyce97/BTL_java-2/blob/master/src/image/demo.png?raw=true)
