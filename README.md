@@ -45,8 +45,8 @@ Run -> Edit Configurations... -> Add new run configuration... -> Application
 
 Modify options -> Add VM options
 
-* VM options: --module-path "\path\to\javafx-sdk-17.0.1\lib" --add-modules javafx.controls,javafx.fxml
+* VM options: --module-path "\path\to\javafx-sdk-21.0.1\lib" --add-modules javafx.controls,javafx.fxml
 
 ## Preview 
 
-![demo](./src/image/demo.png)
+![demo](<img width="1003" alt="demo" src="https://github.com/croyce97/BTL_java-2/assets/125856531/100814bb-bb57-4d65-abbe-920c014ab45d">)
