@@ -49,4 +49,4 @@ Modify options -> Add VM options
 
 ## Preview 
 
-![demo](./image/demo.png)
+![demo](./src/image/demo.png)
