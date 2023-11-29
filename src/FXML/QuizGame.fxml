@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="562.5" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.QuizGameController">
+   <children>
+      <ImageView fitHeight="458.0" fitWidth="773.0" layoutX="19.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/totoro.jpg" />
+         </image>
+      </ImageView>
+      <Label fx:id="question" layoutX="106.0" layoutY="116.0" prefHeight="89.0" prefWidth="461.0" text="1. How many consonants are there in the English Alphabets?" textFill="#ff6f6f" wrapText="true">
+         <font>
+            <Font name="Times New Roman" size="23.0" />
+         </font>
+      </Label>
+      <Button id="opt3" fx:id="opt3" layoutX="106.0" layoutY="313.0" mnemonicParsing="false" onAction="#opt3clicked" prefHeight="57.0" prefWidth="236.0" style="-fx-background-color: BLUEVIOLET; -fx-background-radius: 100px; -fx-border-radius: 10px;" text="Button" textFill="WHITE">
+         <font>
+            <Font name="Open Sans Semibold" size="17.0" />
+         </font>
+         <effect>
+            <SepiaTone level="0.73" />
+         </effect>
+      </Button>
+      <Button fx:id="opt1" layoutX="106.0" layoutY="214.0" mnemonicParsing="false" onAction="#opt1clicked" prefHeight="57.0" prefWidth="236.0" style="-fx-background-color: BLUEVIOLET; -fx-background-radius: 100px; -fx-border-radius: 10px;" text="Button" textFill="WHITE">
+         <font>
+            <Font name="Open Sans Semibold" size="17.0" />
+         </font>
+         <effect>
+            <SepiaTone level="0.73" />
+         </effect>
+      </Button>
+      <Button id="opt2" fx:id="opt2" layoutX="406.0" layoutY="214.0" mnemonicParsing="false" onAction="#opt2clicked" prefHeight="57.0" prefWidth="236.0" style="-fx-background-color: BLUEVIOLET; -fx-background-radius: 100px; -fx-border-radius: 10px;" text="Button" textFill="WHITE">
+         <font>
+            <Font name="Open Sans Semibold" size="17.0" />
+         </font>
+         <effect>
+            <SepiaTone level="0.73" />
+         </effect>
+      </Button>
+      <Button id="opt4" fx:id="opt4" layoutX="406.0" layoutY="313.0" mnemonicParsing="false" onAction="#opt4clicked" prefHeight="57.0" prefWidth="236.0" style="-fx-background-color: BLUEVIOLET; -fx-background-radius: 100px; -fx-border-radius: 10px;" text="Button" textFill="WHITE">
+         <font>
+            <Font name="Open Sans Semibold" size="17.0" />
+         </font>
+         <effect>
+            <SepiaTone level="0.73" />
+         </effect>
+      </Button>
+   </children>
+</AnchorPane>

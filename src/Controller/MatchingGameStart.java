@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.ResourceBundle;
 
-public class StartGame implements Initializable {
+public class MatchingGameStart implements Initializable {
     @FXML
     AnchorPane anchorGame;
     @FXML
@@ -58,7 +58,7 @@ public class StartGame implements Initializable {
 
             buttons.addAll(Arrays.asList(button0, button1, button2, button3, button4,
                     button5, button6, button7));
-            winAnchorPane = FXMLLoader.load(getClass().getResource("/FXML/Win.fxml"));
+            winAnchorPane = FXMLLoader.load(getClass().getResource("/FXML/MatchingGameWin.fxml"));
         } catch (Exception e) {
             e.printStackTrace();
         }

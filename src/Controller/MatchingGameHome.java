@@ -21,7 +21,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.*;
 
-public class Game{
+public class MatchingGameHome{
 
     @FXML
     AnchorPane anchorPane;
@@ -31,7 +31,7 @@ public class Game{
 
     public void playNow(ActionEvent actionEvent) {
         try {
-                GameAnchorPane = FXMLLoader.load(getClass().getResource("/FXML/Game.fxml"));
+                GameAnchorPane = FXMLLoader.load(getClass().getResource("/FXML/MatchingGame.fxml"));
         } catch (Exception ex) {
             ex.printStackTrace();
         }

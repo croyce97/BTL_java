@@ -7,7 +7,7 @@
 22028200 Nguyễn Quang Cảnh
 
 ## Introduction
-Bài tập lớn số 1 - Từ điển (UET OASIS - I2324 INT2204 22 - Lập trình hướng đối tượng)
+Bài tập lớn - Từ điển (UET OASIS - I2324 INT2204 22 - Lập trình hướng đối tượng)
 
 
 ## Features
