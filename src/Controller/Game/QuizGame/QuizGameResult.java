@@ -1,11 +1,8 @@
-package Controller;
+package Controller.Game.QuizGame;
 
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressIndicator;
-import javafx.scene.text.Text;
 
 public class QuizGameResult {
     @FXML

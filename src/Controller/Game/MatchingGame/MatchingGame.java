@@ -1,4 +1,4 @@
-package Controller;
+package Controller.Game.MatchingGame;
 
 import Data.LoadWordFromDataBase;
 

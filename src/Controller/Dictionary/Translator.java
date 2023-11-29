@@ -1,4 +1,4 @@
-package Controller;
+package Controller.Dictionary;
 
 import API.Language;
 import API.TranslatorGG;

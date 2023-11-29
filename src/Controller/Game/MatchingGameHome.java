@@ -1,4 +1,4 @@
-package Controller;
+package Controller.Game;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -27,6 +27,8 @@ public class MatchingGameHome{
     AnchorPane anchorPane;
     @FXML
     AnchorPane GameAnchorPane;
+    @FXML
+    AnchorPane QuizAnchorPane;
 
 
     public void playNow(ActionEvent actionEvent) {
@@ -38,6 +40,16 @@ public class MatchingGameHome{
 
         setMainPane(GameAnchorPane);
     }
+    public void PlayQuiz(ActionEvent actionEvent) {
+        try {
+            QuizAnchorPane = FXMLLoader.load(getClass().getResource("/FXML/QuizGameHome.fxml"));
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+
+        setMainPane(QuizAnchorPane);
+    }
+
 
     public void setMainPane(AnchorPane pane) {
         anchorPane.getChildren().clear();

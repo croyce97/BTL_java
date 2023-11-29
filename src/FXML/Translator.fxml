@@ -8,7 +8,7 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="562.5" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Translator">
+<AnchorPane prefHeight="562.5" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Dictionary.Translator">
    <children>
       <TextField fx:id="needTrans" alignment="TOP_LEFT" layoutX="212.0" layoutY="12.0" prefHeight="170.0" prefWidth="576.0" promptText="Enter Paragraph">
          <font>

@@ -7,7 +7,7 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="562.5" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Delete">
+<AnchorPane prefHeight="562.5" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Dictionary.Delete">
    <children>
       <TextField fx:id="textField" layoutX="247.0" layoutY="17.0" onKeyReleased="#inputWordEventHandle" prefHeight="46.0" prefWidth="518.0" promptText="Enter Word">
          <font>

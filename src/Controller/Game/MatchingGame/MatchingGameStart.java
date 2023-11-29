@@ -1,5 +1,6 @@
-package Controller;
+package Controller.Game.MatchingGame;
 
+import Controller.Game.MatchingGame.MatchingGame;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;

@@ -1,4 +1,4 @@
-package Controller;
+package Controller.Dictionary;
 
 import Data.Data;
 import Data.Word;
