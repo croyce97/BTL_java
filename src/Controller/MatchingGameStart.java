@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.ResourceBundle;
 
-public class StartGame implements Initializable {
+public class MatchingGameStart implements Initializable {
     @FXML
     AnchorPane anchorGame;
     @FXML
