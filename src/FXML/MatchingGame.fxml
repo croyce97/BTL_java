@@ -20,7 +20,7 @@
                <children>
                   <Button fx:id="button0" mnemonicParsing="false" onAction="#buttonClicked" prefHeight="100.0" prefWidth="240.0">
                      <font>
-                        <Font size="18.0" />
+                        <Font size="14.0" />
                      </font>
                      <effect>
                         <SepiaTone level="0.36" />
@@ -28,7 +28,7 @@
                   </Button>
                   <Button fx:id="button1" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#buttonClicked" prefHeight="100.0" prefWidth="240.0">
                      <font>
-                        <Font size="18.0" />
+                        <Font size="14.0" />
                      </font>
                      <effect>
                         <SepiaTone level="0.36" />
@@ -36,7 +36,7 @@
                   </Button>
                   <Button fx:id="button2" layoutX="235.0" layoutY="10.0" mnemonicParsing="false" onAction="#buttonClicked" prefHeight="100.0" prefWidth="241.0">
                      <font>
-                        <Font size="18.0" />
+                        <Font size="14.0" />
                      </font>
                      <effect>
                         <SepiaTone level="0.36" />
@@ -48,7 +48,7 @@
                <children>
                   <Button fx:id="button3" mnemonicParsing="false" onAction="#buttonClicked" prefHeight="100.0" prefWidth="244.0">
                      <font>
-                        <Font size="18.0" />
+                        <Font size="14.0" />
                      </font>
                      <effect>
                         <SepiaTone level="0.36" />
@@ -61,7 +61,7 @@
                   </Button>
                   <Button fx:id="button5" layoutX="110.0" layoutY="10.0" mnemonicParsing="false" onAction="#buttonClicked" prefHeight="100.0" prefWidth="238.0">
                      <font>
-                        <Font size="18.0" />
+                        <Font size="14.0" />
                      </font>
                      <effect>
                         <SepiaTone level="0.36" />
@@ -73,7 +73,7 @@
                <children>
                   <Button fx:id="button6" mnemonicParsing="false" onAction="#buttonClicked" prefHeight="100.0" prefWidth="243.0">
                      <font>
-                        <Font size="18.0" />
+                        <Font size="14.0" />
                      </font>
                      <effect>
                         <SepiaTone level="0.36" />
@@ -81,7 +81,7 @@
                   </Button>
                   <Button fx:id="button7" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#buttonClicked" prefHeight="100.0" prefWidth="243.0">
                      <font>
-                        <Font size="18.0" />
+                        <Font size="14.0" />
                      </font>
                      <effect>
                         <SepiaTone level="0.36" />
@@ -89,7 +89,7 @@
                   </Button>
                   <Button fx:id="button4" mnemonicParsing="false" onAction="#buttonClicked" prefHeight="100.0" prefWidth="236.0">
                      <font>
-                        <Font size="18.0" />
+                        <Font size="14.0" />
                      </font>
                      <effect>
                         <SepiaTone level="0.36" />
