@@ -54,7 +54,7 @@ public class MatchingGame {
                 crosswordPairs[2][1],crosswordPairs[2][0],
                 crosswordPairs[3][1],crosswordPairs[3][0]));
         } catch (IndexOutOfBoundsException e) {
-            System.out.println("ngoai index");
+            System.out.println("out of index");
         }
     }
 
@@ -86,7 +86,7 @@ public class MatchingGame {
     }
 
     public boolean checkTwoPositions(int firstIndex, int secondIndex) {
-        for(int i=0;i<10;i++){
+        for(int i=0;i<4;i++){
             for(int j=0;j<2;j++){
                 if((Board.get(firstIndex).equals(crosswordPairs[i][j]))) {
                     if((Board.get(secondIndex)).equals(crosswordPairs[i][0])||
