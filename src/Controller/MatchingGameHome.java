@@ -21,7 +21,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.*;
 
-public class Game{
+public class MatchingGameHome{
 
     @FXML
     AnchorPane anchorPane;
