@@ -39,10 +39,8 @@ public class MatchingGame {
             for (int i = 0 ;i  <4;i++) {
                 int k = random.nextInt(1, 1000);
                 String word = LoadWordFromDataBase.List.get(k).getWord();
-                int start = LoadWordFromDataBase.List.get(k).getMean().indexOf('-');
-                int close = LoadWordFromDataBase.List.get(k).getMean().indexOf('\n', start + 1);
-                if (close == -1) close = LoadWordFromDataBase.List.get(k).getMean().length() - 1;
-                String mean = LoadWordFromDataBase.List.get(k).getMean().substring(start + 1, close);
+
+                String mean = LoadWordFromDataBase.List.get(k).getMeanFromWord();
                 crosswordPairs[i][0] = word;
                 crosswordPairs[i][1] = mean;
             }

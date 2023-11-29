@@ -35,4 +35,10 @@ public class Word {
     public String toString() {
         return word;
     }
+    public String getMeanFromWord() {
+        int start = this.getMean().indexOf('-');
+        int close = this.getMean().indexOf('\n', start + 1);
+        if (close == -1) close = this.mean.length() -1 ;
+        return this.getMean().substring(start+1, close);
+    }
 }
