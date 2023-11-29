@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class Win implements Initializable {
+public class MatchingGameWin implements Initializable {
     @FXML
     AnchorPane anchorPane;
     @FXML
