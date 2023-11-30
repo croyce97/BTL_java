@@ -1,138 +1,386 @@
 package Controller.Game.QuizGame;
 
-import Data.LoadWordFromDataBase;
-import Data.Word;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.paint.Color;
-import javafx.stage.Stage;
-import javafx.stage.StageStyle;
+import javafx.scene.control.Button;
+import javafx.scene.layout.AnchorPane;
+
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Random;
+import java.util.*;
 
 public class QuizGameController {
-    @FXML
-    public Label question;
-
-    @FXML
-    public Button opt1, opt2, opt3, opt4;
-
-    @FXML
-    Label Correct;
-    @FXML
-    Label Count;
-    private final Random random = new Random();
-
-    @FXML
-    private void initialize() {
-        setAll();
-    }
-    private void setCorrect(int correct) {
-        Correct.setText(String.valueOf(correct));
-    }
-    private void setCount(int count) {
-        Count.setText(count + "/10");
-    }
-    private void setAnswerToButton(String answer,Button button) {
-        button.setText(answer);
-    }
-    private void SetQuestion(String questionToLabel) {
-        String s = "What mean of \" " + questionToLabel + " \" ?";
-        question.setText(s);
-    }
-    private int trueAnswer;
-    private void setAll() {
-        int d = random.nextInt(1,100);
-        trueAnswer = d%4 +1;
-        Word wordTrue = LoadWordFromDataBase.List.get(d);
-        Word wordFalse1 = LoadWordFromDataBase.List.get(d+1);
-        Word wordFalse2 = LoadWordFromDataBase.List.get(d+2);
-        Word wordFalse3 = LoadWordFromDataBase.List.get(d+3);
-        switch (trueAnswer) {
-            case 1:
-                setAnswerToButton(wordTrue.getMeanFromWord(),opt1);
-                setAnswerToButton(wordFalse1.getMeanFromWord(),opt2);
-                setAnswerToButton(wordFalse2.getMeanFromWord(),opt3);
-                setAnswerToButton(wordFalse3.getMeanFromWord(),opt4);
-            case 2:
-                setAnswerToButton(wordTrue.getMeanFromWord(),opt2);
-                setAnswerToButton(wordFalse1.getMeanFromWord(),opt1);
-                setAnswerToButton(wordFalse2.getMeanFromWord(),opt3);
-                setAnswerToButton(wordFalse3.getMeanFromWord(),opt4);
-            case 3:
-                setAnswerToButton(wordTrue.getMeanFromWord(),opt3);
-                setAnswerToButton(wordFalse1.getMeanFromWord(),opt1);
-                setAnswerToButton(wordFalse2.getMeanFromWord(),opt2);
-                setAnswerToButton(wordFalse3.getMeanFromWord(),opt4);
-            case 4:
-                setAnswerToButton(wordTrue.getMeanFromWord(),opt4);
-                setAnswerToButton(wordFalse1.getMeanFromWord(),opt1);
-                setAnswerToButton(wordFalse2.getMeanFromWord(),opt2);
-                setAnswerToButton(wordFalse3.getMeanFromWord(),opt3);
+        @FXML
+        AnchorPane mainPaneQuiz;
+        @FXML
+        AnchorPane resultPane;
+        public void setMainPane(AnchorPane pane) {
+            mainPaneQuiz.getChildren().clear();
+            mainPaneQuiz.getChildren().addAll(pane);
         }
-        SetQuestion(wordTrue.getWord());
-    }
-    private boolean checkAnswer(Button button) {
-        int q = 0;
-        if (button.equals(opt1)) q = 1;
-        else if (button.equals(opt2)) q = 2;
-        else if (button.equals(opt3)) q = 3;
-        else if (button.equals(opt4)) q = 4;
+        @FXML
+        public Label question;
 
-        if (trueAnswer == q) return true;
-        return false;
-    }
-    private int countInt =0;
-    private int correctInt=0 ;
-    public void opt1clicked(ActionEvent actionEvent) {
-        if( checkAnswer(opt1)){
-            System.out.println("TRue");
-            correctInt++;
-        }
-        else System.out.println("fasle");
-        countInt++;
-        setCorrect(correctInt);
-        setCount(countInt);
-        setAll();
-    }
-    public void opt2clicked(ActionEvent actionEvent) {
-        if( checkAnswer(opt2)){
-            System.out.println("TRue");
-            correctInt++;
-        }
-        else System.out.println("fasle");
-        countInt++;
-        setCorrect(correctInt);
-        setCount(countInt);
-        setAll();
-    }
-    public void opt3clicked(ActionEvent actionEvent) {
-        if( checkAnswer(opt3)){
-            System.out.println("TRue");
-            correctInt++;
-        }
-        else System.out.println("fasle");
-        countInt++;
-        setCorrect(correctInt);
-        setCount(countInt);
-        setAll();
-    }
-    public void opt4clicked(ActionEvent actionEvent) {
-        if( checkAnswer(opt4)){
-            System.out.println("TRue");
-            correctInt++;
-        }
-        else System.out.println("fasle");
-        countInt++;
-        setCorrect(correctInt);
-        setCount(countInt);
-        setAll();
-    }
+        @FXML
+        public Button opt1, opt2, opt3, opt4;
 
+        private int currentQuestionIndex = 0;
+        private List<QuizGameSet> quizSets = new ArrayList<>();
+
+        static Random random = new Random();
+        int selectedQuizIndex = random.nextInt(5);
+        int oldIndex = selectedQuizIndex;
+        static int correct = 0;
+        static int wrong = 0;
+
+        @FXML
+        private void initialize() {
+            while(selectedQuizIndex == oldIndex) {
+                selectedQuizIndex = random.nextInt(5);
+            }
+            loadQuizSets();
+        }
+
+        private void loadQuizSets() {
+            /**
+             *Bộ 1: Random
+             */
+            String[] questions1 = new String[] {
+                    "1. How many consonants are there in the English alphabet?",
+                    "2. Who invented the Light bulb",
+                    "3. In the Solar System, which is the farthest planet from the Sun?",
+                    "4. What is the largest moon in the Solar System?",
+                    "5. Which of these is 'not' a property of metal?",
+                    "6. Who discovered Pasteurisation?",
+                    "7. Hydrochloric acid (HCl) is produced by which part of the body?",
+                    "8. What is the fastest animal in the world?",
+                    "9. What is the complementary color of Red?",
+                    "10. When is World Environment Day?"
+            };
+            List<String> questionsSet1 = Arrays.asList(questions1);
+            String[][] options1 = new String[][] {
+                    {"19", "20", "21", "22"},
+                    {"Thomas Alva Edison", "Alexander Fleming", "Charles Babbage", "Albert Einstein"},
+                    {"Jupiter", "Saturn", "Uranus", "Neptune"},
+                    {"Titan", "Ganymede", "Moon", "Europa"},
+                    {"Good Conduction", "Malleable", "Non Ductile", "Sonourous"},
+                    {"Alexander Fleming", "Louis Pasteur", "Simon Pasteur", "William Pasteur"},
+                    {"Small Intestine", "Liver", "Oesophagus", "Stomach"},
+                    {"Lion", "Blackbuck", "Cheetah", "Quarter Horse"},
+                    {"Blue", "Green", "Yellow", "Pink"},
+                    {"5th June", "5th July", "15th June", "25th June"}
+            };
+            List<String[]> optionsSet1 = Arrays.asList(options1);
+            String[] correctAnswers1 = new String[] {
+                    "21",
+                    "Thomas Alva Edison",
+                    "Neptune",
+                    "Ganymede",
+                    "Non Ductile",
+                    "Louis Pasteur",
+                    "Stomach",
+                    "Cheetah",
+                    "Green",
+                    "5th June"
+            };
+            List<String> correctAnswersSet1 = Arrays.asList(correctAnswers1);
+
+            /**
+             * Bộ 2: Địa lý
+             */
+            String[] questions2 = new String[] {
+                    "1. What is the capital city of Australia?",
+                    "2. Which is the largest country in the world by area?",
+                    "3. Which countries does the Nile River flow through?",
+                    "4. What is the highest mountain in the world?",
+                    "5. Which country has the largest population in the world?",
+                    "6. What is the largest ocean in the world?",
+                    "7. What is the smallest continent in the world?",
+                    "8. What is the highest waterfall in the world?",
+                    "9. Which is the largest planet in our Solar System?",
+                    "10. Which country has the largest number of islands in the world?"
+            };
+            List<String> questionsSet2 = Arrays.asList(questions2);
+
+            String[][] options2 = new String[][] {
+                    {"Sydney", "Melbourne", "Canberra", "Brisbane"},
+                    {"Canada", "China", "USA", "Russia"},
+                    {"Egypt and Sudan", "Egypt, Sudan, and Ethiopia", "Egypt and Uganda", "Egypt, Sudan, Uganda, and Ethiopia"},
+                    {"K2", "Kilimanjaro", "Everest", "Mont Blanc"},
+                    {"India", "USA", "Indonesia", "China"},
+                    {"Atlantic Ocean", "Indian Ocean", "Arctic Ocean", "Pacific Ocean"},
+                    {"Australia", "South America", "Africa", "Europe"},
+                    {"Niagara Falls", "Iguazu Falls", "Victoria Falls", "Angel Falls"},
+                    {"Mars", "Saturn", "Jupiter", "Venus"},
+                    {"Philippines", "Indonesia", "Japan", "Greece"}
+            };
+            List<String[]> optionsSet2 = Arrays.asList(options2);
+
+            String[] correctAnswers2 = new String[] {
+                    "Canberra",
+                    "Russia",
+                    "Egypt, Sudan, Uganda, and Ethiopia",
+                    "Everest",
+                    "China",
+                    "Pacific Ocean",
+                    "Australia",
+                    "Angel Falls",
+                    "Jupiter",
+                    "Indonesia"
+            };
+            List<String> correctAnswersSet2 = Arrays.asList(correctAnswers2);
+
+            /**
+             * Bộ 3: ẩm thực, công nghệ thông tin, khoa học vật lý,
+             * sinh học, địa lý, văn học, kinh tế, đến động vật học và địa danh nổi tiếng
+             */
+            String[] questions3 = new String[] {
+                    "1. What is the main ingredient in traditional Japanese miso soup?",
+                    "2. In computer science, what does 'CPU' stand for?",
+                    "3. Who is known as the father of modern physics?",
+                    "4. What gas do plants absorb from the atmosphere for photosynthesis?",
+                    "5. Which country is known as the land of the rising sun?",
+                    "6. Who wrote the novel '1984'?",
+                    "7. What is the currency of the European Union?",
+                    "8. What is the largest mammal in the world?",
+                    "9. What is the name of the longest river in Africa?",
+                    "10. In which city is the famous Golden Gate Bridge located?"
+            };
+            List<String> questionsSet3 = Arrays.asList(questions3);
+
+            String[][] options3 = new String[][] {
+                    {"Rice", "Noodles", "Tofu", "Soybeans"},
+                    {"Central Processing Unit", "Computer Processing Unit", "Central Performance Unit", "Computer Performance Unit"},
+                    {"Galileo Galilei", "Albert Einstein", "Isaac Newton", "Nikola Tesla"},
+                    {"Carbon Dioxide", "Oxygen", "Nitrogen", "Hydrogen"},
+                    {"China", "Japan", "South Korea", "Thailand"},
+                    {"George Orwell", "Aldous Huxley", "Ray Bradbury", "H.G. Wells"},
+                    {"Euro", "Pound Sterling", "Dollar", "Yen"},
+                    {"Elephant", "Blue Whale", "Giraffe", "Hippopotamus"},
+                    {"Nile", "Congo", "Zambezi", "Niger"},
+                    {"New York", "San Francisco", "Los Angeles", "Seattle"}
+            };
+            List<String[]> optionsSet3 = Arrays.asList(options3);
+
+            String[] correctAnswers3 = new String[] {
+                    "Soybeans",
+                    "Central Processing Unit",
+                    "Albert Einstein",
+                    "Carbon Dioxide",
+                    "Japan",
+                    "George Orwell",
+                    "Euro",
+                    "Blue Whale",
+                    "Nile",
+                    "San Francisco"
+            };
+            List<String> correctAnswersSet3 = Arrays.asList(correctAnswers3);
+
+            /**
+             * Bộ 4: hóa học, địa lý, lịch sử, nghệ thuật,
+             * khoa học vũ trụ, văn học, sinh học và địa danh lịch sử
+             */
+            String[] questions4 = new String[] {
+                    "1. Which element is represented by the symbol 'O' in the periodic table?",
+                    "2. What is the capital of France?",
+                    "3. In what year did World War II end?",
+                    "4. Which artist is famous for the painting 'The Starry Night'?",
+                    "5. What is the largest planet in our Solar System?",
+                    "6. Who is the author of 'Pride and Prejudice'?",
+                    "7. What is the formula for water?",
+                    "8. What is the name of the world's largest coral reef system?",
+                    "9. In which country is the ancient city of Petra located?",
+                    "10. What type of animal is a 'Komodo dragon'?"
+            };
+            List<String> questionsSet4 = Arrays.asList(questions4);
+
+            String[][] options4 = new String[][] {
+                    {"Iron", "Oxygen", "Gold", "Helium"},
+                    {"Paris", "Berlin", "Rome", "Madrid"},
+                    {"1945", "1944", "1939", "1942"},
+                    {"Vincent Van Gogh", "Pablo Picasso", "Leonardo da Vinci", "Claude Monet"},
+                    {"Earth", "Jupiter", "Mars", "Saturn"},
+                    {"Jane Austen", "Charlotte Brontë", "Louisa May Alcott", "Emily Dickinson"},
+                    {"H2O", "CO2", "O2", "N2"},
+                    {"Great Barrier Reef", "Red Sea Coral Reef", "New Caledonia Barrier Reef", "Mesoamerican Barrier Reef"},
+                    {"Egypt", "Jordan", "Greece", "Italy"},
+                    {"Bird", "Reptile", "Mammal", "Amphibian"}
+            };
+            List<String[]> optionsSet4 = Arrays.asList(options4);
+
+            String[] correctAnswers4 = new String[] {
+                    "Oxygen",
+                    "Paris",
+                    "1945",
+                    "Vincent Van Gogh",
+                    "Jupiter",
+                    "Jane Austen",
+                    "H2O",
+                    "Great Barrier Reef",
+                    "Jordan",
+                    "Reptile"
+            };
+            List<String> correctAnswersSet4 = Arrays.asList(correctAnswers4);
+
+            /**
+             * Bộ 5: văn học, khoa học, địa lý và nghệ thuật
+             */
+            String[] questions5 = new String[] {
+                    "1. Who wrote the play 'Romeo and Juliet'?",
+                    "2. What is the chemical symbol for gold?",
+                    "3. Which planet is known as the Red Planet?",
+                    "4. What is the hardest natural substance on Earth?",
+                    "5. Which ocean lies on the east coast of the United States?",
+                    "6. Who is known for the theory of relativity?",
+                    "7. What is the smallest bone in the human body?",
+                    "8. What is the capital of Japan?",
+                    "9. Who painted the Mona Lisa?",
+                    "10. What is the boiling point of water at sea level?"
+            };
+            List<String> questionsSet5 = Arrays.asList(questions5);
+
+            String[][] options5 = new String[][] {
+                    {"William Shakespeare", "Charles Dickens", "Jane Austen", "Leo Tolstoy"},
+                    {"Ag", "Au", "Fe", "Pt"},
+                    {"Venus", "Mars", "Jupiter", "Saturn"},
+                    {"Diamond", "Quartz", "Ruby", "Amethyst"},
+                    {"Pacific Ocean", "Atlantic Ocean", "Indian Ocean", "Arctic Ocean"},
+                    {"Isaac Newton", "Albert Einstein", "Niels Bohr", "Stephen Hawking"},
+                    {"Femur", "Stapes", "Humerus", "Tibia"},
+                    {"Kyoto", "Osaka", "Tokyo", "Nagoya"},
+                    {"Leonardo da Vinci", "Michelangelo", "Raphael", "Donatello"},
+                    {"90°C", "100°C", "110°C", "120°C"}
+            };
+            List<String[]> optionsSet5 = Arrays.asList(options5);
+
+            String[] correctAnswers5 = new String[] {
+                    "William Shakespeare",
+                    "Au",
+                    "Mars",
+                    "Diamond",
+                    "Atlantic Ocean",
+                    "Albert Einstein",
+                    "Stapes",
+                    "Tokyo",
+                    "Leonardo da Vinci",
+                    "100°C"
+            };
+            List<String> correctAnswersSet5 = Arrays.asList(correctAnswers5);
+
+
+
+            // Tạo bộ câu hỏi và thêm vào danh sách bộ câu hỏi
+            QuizGameSet quizSet1 = new QuizGameSet(questionsSet1, optionsSet1, correctAnswersSet1);
+            quizSets.add(quizSet1);
+
+            QuizGameSet quizSet2 = new QuizGameSet(questionsSet2, optionsSet2, correctAnswersSet2);
+            quizSets.add(quizSet2);
+
+            QuizGameSet quizSet3 = new QuizGameSet(questionsSet3, optionsSet3, correctAnswersSet3);
+            quizSets.add(quizSet3);
+
+            QuizGameSet quizSet4 = new QuizGameSet(questionsSet4, optionsSet4, correctAnswersSet4);
+            quizSets.add(quizSet4);
+
+            QuizGameSet quizSet5 = new QuizGameSet(questionsSet5, optionsSet5, correctAnswersSet5);
+            quizSets.add(quizSet5);
+
+            // Thêm các bộ câu hỏi khác bằng cách tạo các đối tượng QuizGameSet tương tự cho mỗi bộ câu hỏi
+
+            QuizGameSet selectedQuiz = quizSets.get(selectedQuizIndex);
+            showQuestion(selectedQuiz);
+        }
+
+
+        private void showQuestion(QuizGameSet QuizGameSet) {
+            List<String> questions = QuizGameSet.getQuestions();
+            List<String[]> options = QuizGameSet.getOptions();
+
+            if (currentQuestionIndex < questions.size()) {
+                question.setText(questions.get(currentQuestionIndex));
+                opt1.setText(options.get(currentQuestionIndex)[0]);
+                opt2.setText(options.get(currentQuestionIndex)[1]);
+                opt3.setText(options.get(currentQuestionIndex)[2]);
+                opt4.setText(options.get(currentQuestionIndex)[3]);
+            }
+        }
+
+        private boolean checkAnswer(String selectedAnswer) {
+            String correctAnswer = quizSets.get(selectedQuizIndex).getCorrectAnswers().get(currentQuestionIndex);
+            return selectedAnswer.equals(correctAnswer);
+        }
+
+        @FXML
+        public void opt1clicked(ActionEvent actionEvent) {
+            boolean isCorrect = checkAnswer(opt1.getText().toString());
+            handleAnswer(isCorrect);
+        }
+
+        @FXML
+        public void opt2clicked(ActionEvent actionEvent) {
+            boolean isCorrect = checkAnswer(opt2.getText().toString());
+            handleAnswer(isCorrect);
+        }
+
+        @FXML
+        public void opt3clicked(ActionEvent actionEvent) {
+            boolean isCorrect = checkAnswer(opt3.getText().toString());
+            handleAnswer(isCorrect);
+        }
+
+        @FXML
+        public void opt4clicked(ActionEvent actionEvent) {
+            boolean isCorrect = checkAnswer(opt4.getText().toString());
+            handleAnswer(isCorrect);
+        }
+
+        private void handleAnswer(boolean isCorrect) {
+            if (currentQuestionIndex == quizSets.get(selectedQuizIndex).getQuestions().size() - 1) {
+                try {
+                    resultPane = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/FXML/QuizGameResult.fxml")));
+                    setMainPane(resultPane);
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+            } else {
+                // Chuyển sang câu hỏi tiếp theo trong bộ câu hỏi hiện tại
+                currentQuestionIndex++;
+                showQuestion(quizSets.get(selectedQuizIndex));
+            }
+        }
+
+
+        private Button getSelectedOptionButton() {
+            if (opt1.isArmed()) {
+                return opt1;
+            } else if (opt2.isArmed()) {
+                return opt2;
+            } else if (opt3.isArmed()) {
+                return opt3;
+            } else if (opt4.isArmed()) {
+                return opt4;
+            }
+            return null;
+        }
+
+        private Button getCorrectOptionButton() {
+            String correctAnswer = quizSets.get(selectedQuizIndex).getCorrectAnswers().get(currentQuestionIndex);
+            if (opt1.getText().equals(correctAnswer)) {
+                return opt1;
+            } else if (opt2.getText().equals(correctAnswer)) {
+                return opt2;
+            } else if (opt3.getText().equals(correctAnswer)) {
+                return opt3;
+            } else if (opt4.getText().equals(correctAnswer)) {
+                return opt4;
+            }
+
+            return null;
+        }
 }
