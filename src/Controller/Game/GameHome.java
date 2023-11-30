@@ -42,7 +42,7 @@ public class GameHome{
     }
     public void PlayQuiz(ActionEvent actionEvent) {
         try {
-            QuizAnchorPane = FXMLLoader.load(getClass().getResource("/FXML/QuizGameHome.fxml"));
+            QuizAnchorPane = FXMLLoader.load(getClass().getResource("/FXML/QuizGame.fxml"));
         } catch (Exception ex) {
             ex.printStackTrace();
         }
