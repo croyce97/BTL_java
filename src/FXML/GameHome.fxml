@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="anchorPane" prefHeight="562.5" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Game.GameHome">
+   <children>
+      <ImageView fitHeight="458.0" fitWidth="773.0" layoutX="19.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/totoro.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="317.0" fitWidth="259.0" layoutX="502.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/instr.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="79.0" fitWidth="162.0" layoutX="542.0" layoutY="362.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/start.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="510.0" layoutY="377.0" mnemonicParsing="false" onAction="#playNow" prefHeight="49.0" prefWidth="221.0" style="-fx-background-color: transparent;" text="Play MatchingGame" textFill="#c35353">
+         <font>
+            <Font name="Times New Roman" size="17.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="317.0" fitWidth="259.0" layoutX="183.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@/image/img_1.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="79.0" fitWidth="162.0" layoutX="223.0" layoutY="362.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/start.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="200.0" layoutY="372.0" mnemonicParsing="false" onAction="#PlayQuiz" prefHeight="60.0" prefWidth="201.0" style="-fx-background-color: transparent;" text="Play QuizGame" textFill="#ff5656">
+         <effect>
+            <SepiaTone />
+         </effect>
+         <font>
+            <Font name="Times New Roman" size="17.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
