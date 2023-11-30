@@ -19,7 +19,7 @@ public class MatchingGameWin implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
-            PlayAgain = FXMLLoader.load(getClass().getResource("/FXML/MatchingGameHome.fxml"));
+            PlayAgain = FXMLLoader.load(getClass().getResource("/FXML/GameHome.fxml"));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
