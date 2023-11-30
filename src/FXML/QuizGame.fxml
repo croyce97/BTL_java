@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
+<?import javafx.scene.paint.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="451.0" prefWidth="787.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Game.QuizGame.QuizGameController">
+<AnchorPane fx:id="anchorPane" prefHeight="451.0" prefWidth="787.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Game.QuizGame.QuizGameController">
    <children>
       <ImageView fitHeight="451.0" fitWidth="787.0" layoutX="-2.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -50,5 +52,20 @@
             <SepiaTone level="0.73" />
          </effect>
       </Button>
+      <Label fx:id="Correct" layoutX="244.0" layoutY="102.0" text="0" textFill="#ebe7e7">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <Text fill="WHITE" layoutX="106.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Correct:" underline="true">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Text>
+      <Label fx:id="Count" layoutX="593.0" layoutY="102.0" text="0/10" textFill="#f2efef">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
