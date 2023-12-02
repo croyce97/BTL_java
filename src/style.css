@@ -1,0 +1,98 @@
+.button1{
+     -fx-background-color : DarkSlateBlue;
+     -fx-background-radius : 0 30 30 0;
+}
+.button1:hover{
+     -fx-background-color : DodgerBlue;
+     -fx-background-radius : 0 30 30 0;
+}
+.button1:pressed{
+     -fx-background-color : DarkCyan;
+     -fx-background-radius : 0 30 30 0;
+}
+
+.button2{
+     -fx-background-color : DarkSlateBlue;
+     -fx-background-radius : 0 30 30 0;
+}
+.button2:hover{
+     -fx-background-color : DodgerBlue;
+     -fx-background-radius : 0 30 30 0;
+}
+.button2:pressed{
+     -fx-background-color : DarkCyan;
+     -fx-background-radius : 0 30 30 0;
+}
+
+.button3{
+     -fx-background-color : DarkSlateBlue;
+     -fx-background-radius : 0 30 30 0;
+}
+.button3:hover{
+     -fx-background-color : DodgerBlue;
+     -fx-background-radius : 0 30 30 0;
+}
+.button3:pressed{
+     -fx-background-color : DarkCyan;
+     -fx-background-radius : 0 30 30 0;
+}
+
+.button4{
+     -fx-background-color : DarkSlateBlue;
+     -fx-background-radius : 0 30 30 0;
+}
+.button4:hover{
+     -fx-background-color : DodgerBlue;
+     -fx-background-radius : 0 30 30 0;
+}
+.button4:pressed{
+     -fx-background-color : DarkCyan;
+     -fx-background-radius : 0 30 30 0;
+}
+
+.button5{
+     -fx-background-color : DarkSlateBlue;
+     -fx-background-radius : 0 30 30 0;
+}
+.button5:hover{
+     -fx-background-color : DodgerBlue;
+     -fx-background-radius : 0 30 30 0;
+}
+.button5:pressed{
+     -fx-background-color : DarkCyan;
+     -fx-background-radius : 0 30 30 0;
+}
+
+.button6{
+     -fx-background-color : DarkSlateBlue;
+     -fx-background-radius : 0 30 30 0;
+}
+.button6:hover{
+     -fx-background-color : DodgerBlue;
+     -fx-background-radius : 0 30 30 0;
+}
+.button6:pressed{
+     -fx-background-color : DarkCyan;
+     -fx-background-radius : 0 30 30 0;
+}
+
+.button7{
+     -fx-background-color : DarkSlateBlue;
+     -fx-background-radius : 0 30 30 0;
+}
+.button7:hover{
+     -fx-background-color : DodgerBlue;
+     -fx-background-radius : 0 30 30 0;
+}
+.button7:pressed{
+     -fx-background-color : DarkCyan;
+     -fx-background-radius : 0 30 30 0;
+}
+
+
+
+
+
+
+
+
