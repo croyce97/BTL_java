@@ -1,58 +1,168 @@
 package Controller.Game.QuizGame;
 
+import Data.LoadWordFromDataBase;
+import Data.Word;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.ProgressIndicator;
 import javafx.scene.layout.AnchorPane;
-
+import javafx.scene.paint.Color;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Random;
 
-public class QuizGameResult implements Initializable {
+public class QuizGameController {
     @FXML
-    public Label marks, markstext, correcttext, wrongtext, remark;
+    public Label question;
+
+    @FXML
+    public Button opt1, opt2, opt3, opt4;
+
+    @FXML
+    Label Correct;
+    @FXML
+    Label Count;
+    private final Random random = new Random();
+
+    @FXML
+    private void initialize() {
+        setAll();
+    }
+    private void setCorrect(int correct) {
+        Correct.setText(String.valueOf(correct));
+    }
+    private void setCount(int count) {
+        Count.setText(count + "/10");
+    }
+    private void setAnswerToButton(String answer,Button button) {
+        button.setText(answer);
+    }
+    private void SetQuestion(String questionToLabel) {
+        String s = "What ia the meaning of \" " + questionToLabel + " \" ?";
+        question.setText(s);
+    }
+    private int trueAnswer;
+    private void setAll() {
+        int d = random.nextInt(1,100);
+        trueAnswer = d%4 +1;
+        Word wordTrue = LoadWordFromDataBase.List.get(d);
+        Word wordFalse1 = LoadWordFromDataBase.List.get(d+1);
+        Word wordFalse2 = LoadWordFromDataBase.List.get(d+2);
+        Word wordFalse3 = LoadWordFromDataBase.List.get(d+3);
+        switch (trueAnswer) {
+            case 1:
+                setAnswerToButton(wordTrue.getMeanFromWord(),opt1);
+                setAnswerToButton(wordFalse1.getMeanFromWord(),opt2);
+                setAnswerToButton(wordFalse2.getMeanFromWord(),opt3);
+                setAnswerToButton(wordFalse3.getMeanFromWord(),opt4);
+            case 2:
+                setAnswerToButton(wordTrue.getMeanFromWord(),opt2);
+                setAnswerToButton(wordFalse1.getMeanFromWord(),opt1);
+                setAnswerToButton(wordFalse2.getMeanFromWord(),opt3);
+                setAnswerToButton(wordFalse3.getMeanFromWord(),opt4);
+            case 3:
+                setAnswerToButton(wordTrue.getMeanFromWord(),opt3);
+                setAnswerToButton(wordFalse1.getMeanFromWord(),opt1);
+                setAnswerToButton(wordFalse2.getMeanFromWord(),opt2);
+                setAnswerToButton(wordFalse3.getMeanFromWord(),opt4);
+            case 4:
+                setAnswerToButton(wordTrue.getMeanFromWord(),opt4);
+                setAnswerToButton(wordFalse1.getMeanFromWord(),opt1);
+                setAnswerToButton(wordFalse2.getMeanFromWord(),opt2);
+                setAnswerToButton(wordFalse3.getMeanFromWord(),opt3);
+        }
+        SetQuestion(wordTrue.getWord());
+    }
+    private boolean checkAnswer(Button button) {
+        int q = 0;
+        if (button.equals(opt1)) q = 1;
+        else if (button.equals(opt2)) q = 2;
+        else if (button.equals(opt3)) q = 3;
+        else if (button.equals(opt4)) q = 4;
+
+        if (trueAnswer == q) return true;
+        return false;
+    }
+    private int countInt =0;
+    private static int correctInt=0 ;
+
+    public static int getCorrectInt() {
+        return correctInt;
+    }
+
+    public static void setCorrectInt(int correctInt) {
+        QuizGameController.correctInt = correctInt;
+    }
+
     @FXML
     AnchorPane anchorPane;
-    @FXML
-    AnchorPane GameHome;
-
-    @FXML
-    public ProgressIndicator correct_progress, wrong_progress;
-    int point = QuizGameController.getCorrectInt();
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        marks.setText(point + "/10");
-        markstext.setText(point + " Marks Scored");
-        correcttext.setText("point Answers :" + point);
-        wrongtext.setText( "Incorrect Answers : " + (10-point) );
-        correct_progress.setProgress((double) point /10);
-        wrong_progress.setProgress((double) (10-point) /10);
-        try {
-            GameHome = FXMLLoader.load(getClass().getResource("/FXML/GameHome.fxml"));
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+    AnchorPane winAnchorPane;
+    private void Win() {
+        if (countInt >=10) {
+            try {
+                winAnchorPane = FXMLLoader.load(getClass().getResource("/FXML/QuizGameResult.fxml"));
+                anchorPane.getChildren().clear();
+                anchorPane.getChildren().addAll(winAnchorPane);
+            }
+            catch (Exception e) {
+                e.printStackTrace();
+            }
         }
-        if (point<2) {
-            remark.setText("Oh no..! You have failed the quiz. It seems that you need to improve your general knowledge. Practice daily! Check your results here.");
-        } else if (point>=2 && point<5) {
-            remark.setText("Oops..! You have scored less marks. It seems like you need to improve your general knowledge. Check your results here.");
-        } else if (point>=5 && point<=7) {
-            remark.setText("Good. A bit more improvement might help you to get better results. Practice is the key to success. Check your results here.");
-        } else if (point==8 || point==9) {
-            remark.setText("Congratulations! Its your hardwork and determination which helped you to score good marks. Check you results here.");
-        } else if (point==10) {
-            remark.setText("Congratulations! You have passed the quiz with full marks because of your hardwork and dedication towards studies. Keep it up! Check your results here.");
+    }
+    public void opt1clicked(ActionEvent actionEvent) {
+        if( checkAnswer(opt1)){
+            System.out.println("TRue");
+            correctInt++;
         }
-
-
+        else System.out.println("fasle");
+        Win();
+        countInt++;
+        setCorrect(correctInt);
+        setCount(countInt);
+        setAll();
     }
-    public void PlayAgain(ActionEvent actionEvent) {
-        anchorPane.getChildren().clear();
-        anchorPane.getChildren().addAll(GameHome);
-        QuizGameController.setCorrectInt(0);
+
+    public void opt2clicked(ActionEvent actionEvent) {
+        if( checkAnswer(opt2)){
+            System.out.println("TRue");
+            correctInt++;
+        }
+        else System.out.println("fasle");
+        Win();
+        countInt++;
+        setCorrect(correctInt);
+        setCount(countInt);
+        setAll();
     }
+    public void opt3clicked(ActionEvent actionEvent) {
+        if( checkAnswer(opt3)){
+            System.out.println("TRue");
+            correctInt++;
+        }
+        else System.out.println("fasle");
+        Win();
+        countInt++;
+        setCorrect(correctInt);
+        setCount(countInt);
+        setAll();
+    }
+    public void opt4clicked(ActionEvent actionEvent) {
+        if( checkAnswer(opt4)){
+            System.out.println("TRue");
+            correctInt++;
+        }
+        else System.out.println("fasle");
+        Win();
+        countInt++;
+        setCorrect(correctInt);
+        setCount(countInt);
+        setAll();
+    }
+
 }
