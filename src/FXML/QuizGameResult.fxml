@@ -7,14 +7,14 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="anchorPane" prefHeight="435.0" prefWidth="726.0" style="-fx-background-color: white; -fx-background-radius: 32px; -fx-border-radius: 32px;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Game.QuizGame.QuizGameResult">
+<AnchorPane fx:id="anchorPane" prefHeight="562.5" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Game.QuizGame.QuizGameResult">
    <children>
-      <ImageView fitHeight="522.0" fitWidth="789.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="458.0" fitWidth="773.0" layoutX="19.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../image/totoro.jpg" />
          </image>
       </ImageView>
-      <Label fx:id="remark1" layoutX="47.0" layoutY="104.0" prefHeight="70.0" prefWidth="623.0" text="Very good work!! This is your hard work and dedication which helped you to reach the zeinth of success." textFill="#c65656" wrapText="true">
+      <Label fx:id="remark" layoutX="47.0" layoutY="104.0" prefHeight="70.0" prefWidth="623.0" text="Very good work!! This is your hard work and dedication which helped you to reach the zeinth of success." textFill="#c65656" wrapText="true">
          <font>
             <Font name="Times New Roman" size="21.0" />
          </font>
@@ -57,6 +57,15 @@
             <Font name="Open Sans Semibold" size="17.0" />
          </font>
       </Label>
-      <Button layoutX="320.0" layoutY="369.0" mnemonicParsing="false" onAction="#PlayAgain" prefHeight="49.0" prefWidth="110.0" text="Play Again" />
+      <ImageView fitHeight="60.0" fitWidth="155.0" layoutX="315.0" layoutY="375.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/start.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="305.0" layoutY="381.0" mnemonicParsing="false" onAction="#PlayAgain" prefHeight="49.0" prefWidth="140.0" style="-fx-background-color: transparent;" text="PLAY AGAIN" textFill="#e13131">
+         <font>
+            <Font name="Times New Roman" size="18.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
