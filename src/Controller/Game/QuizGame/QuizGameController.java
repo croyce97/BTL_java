@@ -44,7 +44,7 @@ public class QuizGameController {
         button.setText(answer);
     }
     private void SetQuestion(String questionToLabel) {
-        String s = "What mean of \" " + questionToLabel + " \" ?";
+        String s = "What ia the meaning of \" " + questionToLabel + " \" ?";
         question.setText(s);
     }
     private int trueAnswer;
@@ -96,6 +96,9 @@ public class QuizGameController {
         return correctInt;
     }
 
+    public static void setCorrectInt(int correctInt) {
+        QuizGameController.correctInt = correctInt;
+    }
 
     @FXML
     AnchorPane anchorPane;
