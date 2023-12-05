@@ -18,7 +18,7 @@ Bài tập lớn - Từ điển (UET - I2324 INT2204 22 - Lập trình hướng 
 
 * Phát âm tiếng anh
 
-* API google translate Anh <> Việt
+* API google translate Anh, Việt và các ngôn ngữ khác
 
 * Game học tiếng anh 
 
