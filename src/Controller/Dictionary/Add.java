@@ -6,6 +6,7 @@ import Data.Word;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.text.Text;
 
 
@@ -58,4 +59,17 @@ public class Add {
             oke.setText("tu da duoc them");
         }
     }
+    public void inputWordEventHandle1(KeyEvent e) {
+        WordError.setText("");
+    }
+    public void inputWordEventHandle2(KeyEvent e) {
+        ClassError.setText("");
+    }
+    public void inputWordEventHandle3(KeyEvent e) {
+        PronounError.setText("");
+    }
+    public void inputWordEventHandle4(KeyEvent e) {
+        DefinitionError.setText("");
+    }
+
 }

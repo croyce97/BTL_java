@@ -31,6 +31,8 @@ public class Data {
         UpdateSQL.DeleteWord(w);
     }
     public static void Update(Word w) {
+        radixtree.delete((w.getWord() + String.valueOf(w.getIdx())).toLowerCase());
+        radixtree.insert((w.getWord() + String.valueOf(w.getIdx())).toLowerCase(), w);
         UpdateSQL.UpdateWord(w);
     }
 

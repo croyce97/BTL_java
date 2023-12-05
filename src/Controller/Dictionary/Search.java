@@ -38,6 +38,10 @@ public class Search implements Initializable {
         wordList.getItems().addAll(Data.prefixSearch(textField.getText()));
     }
     public void Speak(ActionEvent actionEvent) {
+        if (word == null) {
+            System.out.println("chua chon tu");
+            return;
+        }
         TextToSpeech.Speak(word);
     }
 }

@@ -9,7 +9,7 @@
 
 <AnchorPane prefHeight="562.5" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Dictionary.Add">
    <children>
-      <TextField fx:id="Wordin" layoutX="37.0" layoutY="53.0" prefHeight="66.0" prefWidth="276.0" promptText="Enter Word">
+      <TextField fx:id="Wordin" layoutX="37.0" layoutY="53.0" onKeyReleased="#inputWordEventHandle1" prefHeight="66.0" prefWidth="276.0" promptText="Enter Word">
          <font>
             <Font name="Times New Roman" size="24.0" />
          </font></TextField>
@@ -26,15 +26,15 @@
             </LinearGradient>
          </fill>
       </Text>
-      <TextField fx:id="Classs" layoutX="37.0" layoutY="184.0" prefHeight="66.0" prefWidth="276.0" promptText="Enter WordClass">
+      <TextField fx:id="Classs" layoutX="37.0" layoutY="184.0" onKeyReleased="#inputWordEventHandle2" prefHeight="66.0" prefWidth="276.0" promptText="Enter WordClass">
          <font>
             <Font name="Times New Roman" size="24.0" />
          </font></TextField>
-      <TextField fx:id="Pronoun" layoutX="37.0" layoutY="303.0" prefHeight="66.0" prefWidth="276.0" promptText="Enter pronunciation">
+      <TextField fx:id="Pronoun" layoutX="37.0" layoutY="303.0" onKeyReleased="#inputWordEventHandle3" prefHeight="66.0" prefWidth="276.0" promptText="Enter pronunciation">
          <font>
             <Font name="Times New Roman" size="24.0" />
          </font></TextField>
-      <TextField fx:id="Definition" alignment="TOP_LEFT" layoutX="413.0" layoutY="53.0" prefHeight="394.0" prefWidth="377.0" promptText="Enter difinition">
+      <TextField fx:id="Definition" alignment="TOP_LEFT" layoutX="413.0" layoutY="53.0" onKeyReleased="#inputWordEventHandle4" prefHeight="394.0" prefWidth="377.0" promptText="Enter difinition">
          <font>
             <Font name="Times New Roman" size="24.0" />
          </font></TextField>
@@ -54,7 +54,7 @@
          <font>
             <Font name="Times New Roman" size="24.0" />
          </font></Text>
-      <Text fx:id="oke" layoutX="436.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="332.0">
+      <Text fx:id="oke" layoutX="443.0" layoutY="423.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="332.0">
          <font>
             <Font name="Times New Roman" size="24.0" />
          </font></Text>

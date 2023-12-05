@@ -13,7 +13,7 @@
          <font>
             <Font name="Times New Roman" size="24.0" />
          </font></TextField>
-      <ListView fx:id="wordList" layoutX="248.0" layoutY="78.0" onMouseClicked="#wordListClicked" prefHeight="301.0" prefWidth="516.0" />
+      <ListView fx:id="wordList" layoutX="249.0" layoutY="76.0" onMouseClicked="#wordListClicked" prefHeight="301.0" prefWidth="516.0" />
       <Text layoutX="18.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Word" wrappingWidth="239.57815551757812">
          <font>
             <Font size="36.0" />
@@ -52,5 +52,9 @@
             <Font name="Times New Roman Bold" size="24.0" />
          </font>
       </Button>
+      <Text fx:id="textOke" fill="#d71212" layoutX="207.0" layoutY="457.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="216.826171875">
+         <font>
+            <Font size="24.0" />
+         </font></Text>
    </children>
 </AnchorPane>
